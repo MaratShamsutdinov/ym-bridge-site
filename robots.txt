@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ym-bridge.mytunnel.us.com/sitemap.xml
