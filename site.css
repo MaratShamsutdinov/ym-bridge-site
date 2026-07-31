@@ -1099,13 +1099,17 @@ footer {
     padding-top: 88px;
   }
 
+  .hero-content > * {
+    max-width: 330px;
+  }
+
   h1 {
     font-size: 42px;
   }
 
   .hero-copy {
     width: 100%;
-    max-width: 470px;
+    max-width: 330px;
     font-size: 17px;
     overflow-wrap: anywhere;
   }
