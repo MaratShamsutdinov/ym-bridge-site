@@ -1,5 +1,111 @@
 (function exposeYmBridgeGuideTranslations(root, factory) {
   const translations = factory();
+  const localizedFeatureCards = {
+    de: {
+      guideLayoutsTitle: "Mini-Player- und Seitenleistenlayouts entdecken",
+      guideLayoutsBody: "Vergleichen Sie die vollständige Oberfläche mit Fortschrittsring, Ambient, Steuerdeck und Glaskarte.",
+      guideShortcutsTitle: "Wiedergabe mit Tastenkürzeln steuern",
+      guideShortcutsBody: "Legen Sie eine praktische Tastenbelegung fest und wählen Sie globale Transportbefehle.",
+      guideObsTitle: "Now-Playing-Dateien für OBS exportieren",
+      guideObsBody: "Schreiben Sie lokale TXT-, JSON- und Coverdateien synchron zum aktuellen Yandex-Music-Titel."
+    },
+    es: {
+      guideLayoutsTitle: "Explora los diseños del minirreproductor y el panel lateral",
+      guideLayoutsBody: "Compara la interfaz completa con Progress disc, Ambient, Control deck y Glass card.",
+      guideShortcutsTitle: "Controla la reproducción con atajos de teclado",
+      guideShortcutsBody: "Asigna un mapa de teclas práctico y elige qué controles funcionarán globalmente.",
+      guideObsTitle: "Exporta archivos Now Playing para OBS",
+      guideObsBody: "Crea archivos TXT, JSON y de portada locales sincronizados con la pista actual de Yandex Music."
+    },
+    fr: {
+      guideLayoutsTitle: "Découvrir les dispositions du mini-lecteur et du panneau latéral",
+      guideLayoutsBody: "Comparez l'interface complète avec Progress disc, Ambient, Control deck et Glass card.",
+      guideShortcutsTitle: "Contrôler la lecture avec des raccourcis clavier",
+      guideShortcutsBody: "Attribuez des touches pratiques et choisissez les commandes de lecture globales.",
+      guideObsTitle: "Exporter les fichiers Now Playing pour OBS",
+      guideObsBody: "Générez localement des fichiers TXT, JSON et de pochette synchronisés avec le titre Yandex Music."
+    },
+    ja: {
+      guideLayoutsTitle: "ミニプレーヤーとサイドパネルのレイアウトを見る",
+      guideLayoutsBody: "フル表示と Progress disc、Ambient、Control deck、Glass card を比較できます。",
+      guideShortcutsTitle: "キーボードショートカットで再生を操作する",
+      guideShortcutsBody: "使いやすいキーを割り当て、グローバルに動作する再生コマンドを選べます。",
+      guideObsTitle: "OBS 用 Now Playing ファイルを書き出す",
+      guideObsBody: "現在の Yandex Music の曲と同期する TXT、JSON、カバー画像をローカルに保存します。"
+    },
+    ko: {
+      guideLayoutsTitle: "미니 플레이어와 사이드 패널 레이아웃 살펴보기",
+      guideLayoutsBody: "전체 화면과 Progress disc, Ambient, Control deck, Glass card를 비교하세요.",
+      guideShortcutsTitle: "키보드 단축키로 재생 제어하기",
+      guideShortcutsBody: "실용적인 키 조합을 지정하고 전역으로 동작할 재생 명령을 선택하세요.",
+      guideObsTitle: "OBS용 Now Playing 파일 내보내기",
+      guideObsBody: "현재 Yandex Music 트랙과 동기화되는 TXT, JSON 및 커버 파일을 로컬에 기록합니다."
+    },
+    pl: {
+      guideLayoutsTitle: "Poznaj układy miniodtwarzacza i panelu bocznego",
+      guideLayoutsBody: "Porównaj pełny interfejs z widokami Progress disc, Ambient, Control deck i Glass card.",
+      guideShortcutsTitle: "Steruj odtwarzaniem skrótami klawiaturowymi",
+      guideShortcutsBody: "Przypisz wygodny układ klawiszy i wybierz globalne polecenia odtwarzania.",
+      guideObsTitle: "Eksportuj pliki Now Playing dla OBS",
+      guideObsBody: "Zapisuj lokalne pliki TXT, JSON i okładkę zsynchronizowane z bieżącym utworem Yandex Music."
+    },
+    "pt-BR": {
+      guideLayoutsTitle: "Conheça os layouts do miniplayer e do painel lateral",
+      guideLayoutsBody: "Compare a interface completa com Progress disc, Ambient, Control deck e Glass card.",
+      guideShortcutsTitle: "Controle a reprodução com atalhos de teclado",
+      guideShortcutsBody: "Defina teclas práticas e escolha quais comandos de reprodução funcionarão globalmente.",
+      guideObsTitle: "Exporte arquivos Now Playing para o OBS",
+      guideObsBody: "Grave arquivos TXT, JSON e de capa locais sincronizados com a faixa atual do Yandex Music."
+    },
+    ro: {
+      guideLayoutsTitle: "Explorează aspectele miniplayerului și panoului lateral",
+      guideLayoutsBody: "Compară interfața completă cu Progress disc, Ambient, Control deck și Glass card.",
+      guideShortcutsTitle: "Controlează redarea cu scurtături de tastatură",
+      guideShortcutsBody: "Atribuie taste practice și alege comenzile de redare care funcționează global.",
+      guideObsTitle: "Exportă fișiere Now Playing pentru OBS",
+      guideObsBody: "Scrie local fișiere TXT, JSON și coperta, sincronizate cu piesa curentă din Yandex Music."
+    },
+    tr: {
+      guideLayoutsTitle: "Mini oynatıcı ve yan panel düzenlerini keşfedin",
+      guideLayoutsBody: "Tam arayüzü Progress disc, Ambient, Control deck ve Glass card görünümleriyle karşılaştırın.",
+      guideShortcutsTitle: "Klavye kısayollarıyla oynatmayı kontrol edin",
+      guideShortcutsBody: "Pratik tuşlar atayın ve hangi oynatma komutlarının genel çalışacağını seçin.",
+      guideObsTitle: "OBS için Now Playing dosyalarını dışa aktarın",
+      guideObsBody: "Geçerli Yandex Music parçasıyla eşitlenen yerel TXT, JSON ve kapak dosyaları yazın."
+    },
+    uk: {
+      guideLayoutsTitle: "Переглянути режими мініплеєра та бічної панелі",
+      guideLayoutsBody: "Порівняйте повний інтерфейс із Progress disc, Ambient, Control deck і Glass card.",
+      guideShortcutsTitle: "Керувати відтворенням гарячими клавішами",
+      guideShortcutsBody: "Призначте зручні клавіші та виберіть команди, що працюватимуть глобально.",
+      guideObsTitle: "Експортувати файли Now Playing для OBS",
+      guideObsBody: "Записуйте локальні TXT, JSON і обкладинку синхронно з поточним треком Yandex Music."
+    },
+    "zh-CN": {
+      guideLayoutsTitle: "浏览迷你播放器和侧边栏布局",
+      guideLayoutsBody: "比较完整界面与 Progress disc、Ambient、Control deck 和 Glass card 视图。",
+      guideShortcutsTitle: "使用键盘快捷键控制播放",
+      guideShortcutsBody: "分配实用的按键组合，并选择可在全局使用的播放命令。",
+      guideObsTitle: "为 OBS 导出 Now Playing 文件",
+      guideObsBody: "在本地写入与当前 Yandex Music 曲目同步的 TXT、JSON 和封面文件。"
+    },
+    "zh-TW": {
+      guideLayoutsTitle: "瀏覽迷你播放器和側邊欄版面",
+      guideLayoutsBody: "比較完整介面與 Progress disc、Ambient、Control deck 和 Glass card 檢視。",
+      guideShortcutsTitle: "使用鍵盤快速鍵控制播放",
+      guideShortcutsBody: "指派實用的按鍵組合，並選擇可在全域使用的播放指令。",
+      guideObsTitle: "為 OBS 匯出 Now Playing 檔案",
+      guideObsBody: "在本機寫入與目前 Yandex Music 曲目同步的 TXT、JSON 和封面檔案。"
+    }
+  };
+  for (const [locale, values] of Object.entries(localizedFeatureCards)) {
+    Object.assign(translations[locale].home, values);
+  }
+  for (const translation of Object.values(translations)) {
+    for (const [section, englishValues] of Object.entries(translations.en || {})) {
+      translation[section] = Object.assign({}, englishValues, translation[section] || {});
+    }
+  }
   if (typeof module !== "undefined" && module.exports) module.exports = translations;
   else root.YM_BRIDGE_GUIDE_TRANSLATIONS = translations;
 })(typeof globalThis !== "undefined" ? globalThis : this, () => ({
@@ -19,7 +125,13 @@
       guideRelayTitle: "Use Cloud relay when direct Last.fm access is unavailable",
       guideRelayBody: "See when fallback starts, what is transmitted and how YM Bridge returns to direct delivery.",
       guideQueueTitle: "Understand and retry the scrobble queue",
-      guideQueueBody: "Read Pending, Relay, Retry and Failed states without mistaking live playback for a lost track."
+      guideQueueBody: "Read Pending, Relay, Retry and Failed states without mistaking live playback for a lost track.",
+      guideLayoutsTitle: "Explore mini player and side panel layouts",
+      guideLayoutsBody: "Compare the full interface with progress disc, ambient, control deck and glass card views.",
+      guideShortcutsTitle: "Control playback with keyboard shortcuts",
+      guideShortcutsBody: "Assign a practical key map and choose which transport commands work globally.",
+      guideObsTitle: "Export Now Playing files for OBS",
+      guideObsBody: "Write local TXT, JSON and cover files that stay in sync with the current Yandex Music track."
     },
     support: {
       guidesTitle: "Step-by-step guides",
@@ -76,6 +188,74 @@
       diagnoseBody: `<p>Check the three status areas at the top of the panel: <strong>Last.fm</strong>, <strong>Yandex Music</strong> and <strong>Scrobble queue</strong>. Then read <strong>Delivery target</strong> below the current track.</p><ul><li><strong>direct to Last.fm</strong> means the browser API path is active.</li><li><strong>Cloud relay</strong> means fallback delivery is active or batching.</li><li><strong>connected</strong> confirms that a Last.fm session is saved. Direct profile or statistics requests can still be blocked by the current network.</li></ul>`,
       controlsTitle: "Repair stale track data or controls",
       controlsBody: `<p>If the title, artwork or playback state no longer follows Yandex Music, the delivery problem starts before Last.fm. Open <strong>Tools</strong>, choose <strong>Settings</strong>, run <strong>Control health</strong>, then use <strong>Repair controls</strong>. Reload the Yandex Music tab if the check still reports stale hooks.</p><p>When asking for help, use <strong>Copy diagnostics</strong> and remove anything you do not want to share. Never publish a Last.fm password or session key.</p>`
+    },
+    "guide-layouts": {
+      metaTitle: "Mini Player and Side Panel Layouts | YM Bridge",
+      metaDescription: "Compare YM Bridge mini player and side panel layouts, then choose a fixed compact skin or cycle through every available view.",
+      eyebrow: "Interface guide",
+      title: "Choose your player layout",
+      intro: "Keep the complete control surface or switch to a focused view built around the artwork, progress and the controls you use most.",
+      surfacesTitle: "Two control surfaces",
+      surfacesBody: `<p>The <strong>side panel</strong> stays attached to Chrome and keeps Last.fm state, the queue and tools nearby. The <strong>mini player</strong> is a separate resizable window for playback controls and artwork.</p><p>Both read the same live Yandex Music track. Switching a layout changes presentation only; playback, likes, seeking and scrobbling continue through the extension.</p>`,
+      playerTitle: "Mini player layouts",
+      playerBody: `<p>Use the full player for every control, <strong>Progress disc</strong> for artwork-led listening, or <strong>Ambient</strong> for a wide window that blends the cover into its sampled color.</p>`,
+      playerTabsAria: "Mini player layouts",
+      fullLabel: "Full",
+      discLabel: "Progress disc",
+      ambientLabel: "Ambient",
+      fullPlayerAlt: "YM Bridge full mini player in light and dark themes",
+      discPlayerAlt: "YM Bridge mini player progress disc layout",
+      ambientPlayerAlt: "YM Bridge mini player ambient layout",
+      panelTitle: "Side panel layouts",
+      panelBody: `<p>The complete panel exposes status and tools. Compact views keep playback close: <strong>Progress disc</strong> emphasizes the cover, <strong>Control deck</strong> is dense and direct, and <strong>Glass card</strong> floats the controls over an ambient backdrop.</p>`,
+      panelTabsAria: "Side panel layouts",
+      deckLabel: "Control deck",
+      glassLabel: "Glass card",
+      fullPanelAlt: "YM Bridge complete side panel",
+      discPanelAlt: "YM Bridge side panel progress disc layout",
+      deckPanelAlt: "YM Bridge side panel control deck layout",
+      glassPanelAlt: "YM Bridge side panel glass card layout",
+      switchTitle: "Cycle or pin a layout",
+      switchBody: `<p>Press the layout button in the upper-right corner to move through the full view and every compact skin. Progress and controls remain live while the interface changes.</p><p>To keep one design, open <strong>Global settings</strong> and select a fixed value under <strong>Mini player compact view</strong> or <strong>Side panel compact view</strong>. Choose <strong>Cycle all</strong> to keep the round-robin behavior.</p>`
+    },
+    "guide-shortcuts": {
+      metaTitle: "Yandex Music Keyboard Shortcuts in Chrome | YM Bridge",
+      metaDescription: "Assign Chrome shortcuts for Yandex Music play, pause, next, previous, seek, volume, like and dislike commands in YM Bridge.",
+      eyebrow: "Control guide",
+      title: "Control Yandex Music from the keyboard",
+      intro: "Chrome lets you assign your own keys to YM Bridge commands and decide whether the essential transport controls should work outside the browser.",
+      demoAria: "Example Chrome keyboard shortcut assignments for YM Bridge",
+      openTitle: "Open Chrome shortcuts",
+      openBody: `<p>Enter <code>chrome://extensions/shortcuts</code> in the address bar. Find <strong>Yandex Music to Last.fm Bridge</strong>, press the pencil beside a command, then type the combination you want.</p><p>Chrome owns this screen and stores the assignments. YM Bridge cannot silently replace a key you already use.</p>`,
+      keymapTitle: "A practical key map",
+      keymapBody: `<p>A numeric layout keeps transport commands easy to remember: <strong>7</strong> previous, <strong>8</strong> play or pause, <strong>9</strong> next, <strong>4</strong> seek backward and <strong>6</strong> seek forward. Use <strong>L</strong> for like and <strong>X</strong> for dislike.</p><p>Adding <strong>Ctrl + Shift</strong> reduces collisions with normal typing and common browser shortcuts. Volume can use <strong>Ctrl + Shift + Up</strong> and <strong>Ctrl + Shift + Down</strong>.</p>`,
+      scopeTitle: "Global or in Chrome",
+      scopeBody: `<p>Set <strong>play or pause</strong>, <strong>next</strong> and <strong>previous</strong> to <strong>Global</strong> when you want them to work while another application is active. Keep like, dislike, seeking and volume <strong>In Chrome</strong> unless you specifically need system-wide access.</p><p>The Yandex Music tab still needs to be open. A global shortcut changes where the key is accepted; it does not launch the music site by itself.</p>`,
+      conflictsTitle: "Resolve conflicts",
+      conflictsBody: `<p>If Chrome refuses a combination or it does nothing, another extension or the operating system may already own it. Choose a different key, then test it once with Yandex Music playing.</p><p>Open <strong>Tools</strong> and run <strong>Control health</strong> if the shortcut is accepted but the track does not react. Use <strong>Repair controls</strong> or reload the Yandex Music tab when the page hook is stale.</p>`
+    },
+    "guide-obs": {
+      metaTitle: "Yandex Music Now Playing Overlay for OBS | YM Bridge",
+      metaDescription: "Export Yandex Music Now Playing text, JSON and cover artwork from YM Bridge to a local folder for OBS Studio overlays.",
+      eyebrow: "Streaming guide",
+      title: "Put Yandex Music Now Playing in OBS",
+      intro: "YM Bridge can keep local text, JSON and cover files in sync with the current track so an OBS scene can read them without a remote overlay service.",
+      statesAria: "Now Playing export states",
+      permissionLabel: "Before access",
+      readyLabel: "Ready",
+      permissionDemo: "Chrome needs an explicit folder choice before the extension can create local output.",
+      grantLabel: "Grant folder access",
+      filesAria: "Generated files",
+      changeFolderLabel: "Change folder",
+      disableLabel: "Disable Now Playing",
+      enableTitle: "Grant folder access",
+      enableBody: `<p>Open the side panel, expand <strong>Tools</strong>, choose <strong>Settings</strong>, then press <strong>Grant folder access</strong> in the Now Playing files section. Select a dedicated folder that OBS can continue to read.</p><p>Chrome asks you directly because the extension cannot choose a folder on your behalf. The permission remains local and can be removed with <strong>Change folder</strong> or <strong>Disable Now Playing</strong>.</p>`,
+      filesTitle: "Files YM Bridge writes",
+      filesBody: `<p><strong>now-playing.txt</strong> contains a simple artist and track line for an OBS text source. <strong>now-playing.json</strong> contains structured metadata for custom browser overlays. <strong>now-playing-cover.png</strong> follows the current cover when cover export is enabled.</p><p>The files are replaced in place when playback changes. They stay on your computer; Last.fm delivery and the optional desktop companion are separate features.</p>`,
+      obsTitle: "Add the output to OBS",
+      obsBody: `<ol><li>Add a <strong>Text (GDI+)</strong> source and enable reading from a file, then select <strong>now-playing.txt</strong>.</li><li>Add an <strong>Image</strong> source for <strong>now-playing-cover.png</strong>.</li><li>Style and position both sources in your scene. OBS notices later file updates without requiring the extension to control OBS.</li></ol><p>Use the JSON file when your overlay software needs separate artist, title, album or artwork values.</p>`,
+      healthTitle: "Check export health",
+      healthBody: `<p>Open <strong>Control health</strong> and read the <strong>Now Playing files</strong> row. <strong>writing - just now</strong> confirms a recent update; <strong>permission needed</strong> means Chrome needs the folder to be granted again.</p><p>If track data itself is stale, run <strong>Repair controls</strong> and reload the Yandex Music tab. Folder access cannot repair an inactive page hook.</p>`
     }
   },
   ru: {
@@ -94,7 +274,13 @@
       guideRelayTitle: "Использовать Cloud relay, когда прямой доступ к Last.fm недоступен",
       guideRelayBody: "Узнайте, когда включается резервный путь, какие данные передаются и как YM Bridge возвращается к прямой доставке.",
       guideQueueTitle: "Понять очередь скробблов и повторить отправку",
-      guideQueueBody: "Разберитесь в состояниях Pending, Relay, Retry и Failed, не принимая текущий трек за потерянный."
+      guideQueueBody: "Разберитесь в состояниях Pending, Relay, Retry и Failed, не принимая текущий трек за потерянный.",
+      guideLayoutsTitle: "Выбрать режим мини-плеера и боковой панели",
+      guideLayoutsBody: "Сравните полный интерфейс с режимами Progress disc, Ambient, Control deck и Glass card.",
+      guideShortcutsTitle: "Управлять воспроизведением горячими клавишами",
+      guideShortcutsBody: "Назначьте удобные сочетания и выберите команды, которые будут работать глобально.",
+      guideObsTitle: "Экспортировать Now Playing для OBS",
+      guideObsBody: "Записывайте локальные TXT, JSON и обложку, синхронизированные с текущим треком Яндекс Музыки."
     },
     support: {
       guidesTitle: "Пошаговые руководства",
@@ -151,6 +337,74 @@
       diagnoseBody: `<p>Посмотрите три области вверху панели: <strong>Last.fm</strong>, <strong>Yandex Music</strong> и <strong>Scrobble queue</strong>. Затем проверьте <strong>Delivery target</strong> под текущим треком.</p><ul><li><strong>direct to Last.fm</strong> означает активный прямой путь из браузера.</li><li><strong>Cloud relay</strong> означает активную резервную доставку или накопление пакета.</li><li><strong>connected</strong> подтверждает сохранённую сессию Last.fm. При этом прямые запросы профиля или статистики всё ещё могут блокироваться текущей сетью.</li></ul>`,
       controlsTitle: "Восстановите данные трека или управление",
       controlsBody: `<p>Если название, обложка или состояние воспроизведения перестали следовать за Яндекс Музыкой, проблема возникает ещё до Last.fm. Откройте <strong>Tools</strong>, выберите <strong>Settings</strong>, запустите <strong>Control health</strong>, затем используйте <strong>Repair controls</strong>. Если проверка по-прежнему видит устаревшее подключение, перезагрузите вкладку Яндекс Музыки.</p><p>Для обращения за помощью используйте <strong>Copy diagnostics</strong> и удалите всё, чем не хотите делиться. Никогда не публикуйте пароль или ключ сессии Last.fm.</p>`
+    },
+    "guide-layouts": {
+      metaTitle: "Режимы мини-плеера и боковой панели | YM Bridge",
+      metaDescription: "Сравните режимы мини-плеера и боковой панели YM Bridge, закрепите один скин или переключайтесь между всеми вариантами.",
+      eyebrow: "Интерфейс",
+      title: "Выберите свой режим плеера",
+      intro: "Оставьте полный набор управления или переключитесь на компактный вид, построенный вокруг обложки, прогресса и самых нужных кнопок.",
+      surfacesTitle: "Два интерфейса управления",
+      surfacesBody: `<p><strong>Боковая панель</strong> закреплена в Chrome и держит рядом состояние Last.fm, очередь и инструменты. <strong>Мини-плеер</strong> открывается отдельным окном, размер которого можно менять.</p><p>Оба интерфейса получают один и тот же текущий трек Яндекс Музыки. Смена режима влияет только на оформление: воспроизведение, лайки, перемотка и скробблинг продолжают работать через расширение.</p>`,
+      playerTitle: "Режимы мини-плеера",
+      playerBody: `<p>Используйте полный плеер для доступа ко всем кнопкам, <strong>Progress disc</strong> для акцента на обложке или <strong>Ambient</strong> для широкого окна с плавным переходом обложки в рассчитанный по ней цвет.</p>`,
+      playerTabsAria: "Режимы мини-плеера",
+      fullLabel: "Полный",
+      discLabel: "Progress disc",
+      ambientLabel: "Ambient",
+      fullPlayerAlt: "Полный мини-плеер YM Bridge в светлой и тёмной темах",
+      discPlayerAlt: "Мини-плеер YM Bridge в режиме Progress disc",
+      ambientPlayerAlt: "Мини-плеер YM Bridge в режиме Ambient",
+      panelTitle: "Режимы боковой панели",
+      panelBody: `<p>Полная панель показывает статусы и инструменты. В компактных режимах управление остаётся рядом: <strong>Progress disc</strong> выделяет обложку, <strong>Control deck</strong> собирает всё плотнее, а <strong>Glass card</strong> размещает кнопки на стеклянной панели поверх фоновой обложки.</p>`,
+      panelTabsAria: "Режимы боковой панели",
+      deckLabel: "Control deck",
+      glassLabel: "Glass card",
+      fullPanelAlt: "Полная боковая панель YM Bridge",
+      discPanelAlt: "Боковая панель YM Bridge в режиме Progress disc",
+      deckPanelAlt: "Боковая панель YM Bridge в режиме Control deck",
+      glassPanelAlt: "Боковая панель YM Bridge в режиме Glass card",
+      switchTitle: "Переключайте или закрепите режим",
+      switchBody: `<p>Нажимайте кнопку режима в правом верхнем углу, чтобы по кругу переходить от полного интерфейса ко всем компактным скинам. Прогресс и управление продолжают работать во время перехода.</p><p>Чтобы оставить один дизайн, откройте <strong>Global settings</strong> и выберите значение в <strong>Mini player compact view</strong> или <strong>Side panel compact view</strong>. Значение <strong>Cycle all</strong> сохраняет последовательное переключение.</p>`
+    },
+    "guide-shortcuts": {
+      metaTitle: "Горячие клавиши Яндекс Музыки в Chrome | YM Bridge",
+      metaDescription: "Назначьте в Chrome горячие клавиши YM Bridge для воспроизведения, треков, перемотки, громкости, лайка и дизлайка.",
+      eyebrow: "Управление",
+      title: "Управляйте Яндекс Музыкой с клавиатуры",
+      intro: "Chrome позволяет назначить собственные сочетания для команд YM Bridge и решить, какие основные кнопки будут работать за пределами браузера.",
+      demoAria: "Пример назначенных в Chrome горячих клавиш YM Bridge",
+      openTitle: "Откройте горячие клавиши Chrome",
+      openBody: `<p>Введите <code>chrome://extensions/shortcuts</code> в адресной строке. Найдите <strong>Yandex Music to Last.fm Bridge</strong>, нажмите карандаш рядом с командой и введите нужное сочетание.</p><p>Этой страницей и сохранением назначений управляет Chrome. YM Bridge не может незаметно заменить уже занятое сочетание.</p>`,
+      keymapTitle: "Удобная схема клавиш",
+      keymapBody: `<p>Цифровая схема легко запоминается: <strong>7</strong> — предыдущий трек, <strong>8</strong> — воспроизведение или пауза, <strong>9</strong> — следующий, <strong>4</strong> и <strong>6</strong> — перемотка назад и вперёд. Для лайка используйте <strong>L</strong>, для дизлайка — <strong>X</strong>.</p><p>Модификаторы <strong>Ctrl + Shift</strong> уменьшают число пересечений с обычным вводом и командами браузера. Для громкости подойдут <strong>Ctrl + Shift + Up</strong> и <strong>Ctrl + Shift + Down</strong>.</p>`,
+      scopeTitle: "Глобально или только в Chrome",
+      scopeBody: `<p>Выберите <strong>Global</strong> для воспроизведения или паузы, следующего и предыдущего трека, если эти команды должны работать поверх других приложений. Лайк, дизлайк, перемотку и громкость разумно оставить в режиме <strong>In Chrome</strong>, пока системный доступ действительно не нужен.</p><p>Вкладка Яндекс Музыки всё равно должна быть открыта. Глобальный режим меняет только область действия клавиши и не запускает сайт автоматически.</p>`,
+      conflictsTitle: "Устраните конфликты",
+      conflictsBody: `<p>Если Chrome не принимает сочетание или оно ничего не делает, клавиша может быть занята другим расширением или системой. Выберите другой вариант и один раз проверьте его во время воспроизведения.</p><p>Если сочетание принято, но трек не реагирует, откройте <strong>Tools</strong> и запустите <strong>Control health</strong>. При устаревшем подключении используйте <strong>Repair controls</strong> или перезагрузите вкладку Яндекс Музыки.</p>`
+    },
+    "guide-obs": {
+      metaTitle: "Now Playing Яндекс Музыки для OBS | YM Bridge",
+      metaDescription: "Экспортируйте из YM Bridge текст, JSON и обложку текущего трека Яндекс Музыки в локальную папку для сцен OBS Studio.",
+      eyebrow: "Стриминг",
+      title: "Добавьте Now Playing Яндекс Музыки в OBS",
+      intro: "YM Bridge синхронизирует локальные текстовый, JSON- и графический файлы с текущим треком, чтобы сцена OBS читала их без удалённого сервиса оверлеев.",
+      statesAria: "Состояния экспорта Now Playing",
+      permissionLabel: "До доступа",
+      readyLabel: "Готово",
+      permissionDemo: "Chrome требует явно выбрать папку, прежде чем расширение сможет создать локальные файлы.",
+      grantLabel: "Предоставить доступ к папке",
+      filesAria: "Создаваемые файлы",
+      changeFolderLabel: "Сменить папку",
+      disableLabel: "Отключить Now Playing",
+      enableTitle: "Предоставьте доступ к папке",
+      enableBody: `<p>Откройте боковую панель, разверните <strong>Tools</strong>, выберите <strong>Settings</strong> и нажмите <strong>Grant folder access</strong> в разделе Now Playing files. Выберите отдельную папку, которую OBS сможет постоянно читать.</p><p>Chrome запрашивает выбор напрямую, потому что расширение не может выбрать папку за пользователя. Разрешение остаётся локальным; его можно изменить через <strong>Change folder</strong> или отключить через <strong>Disable Now Playing</strong>.</p>`,
+      filesTitle: "Какие файлы создаёт YM Bridge",
+      filesBody: `<p><strong>now-playing.txt</strong> содержит простую строку с исполнителем и треком для текстового источника OBS. В <strong>now-playing.json</strong> находятся структурированные метаданные для собственных оверлеев. <strong>now-playing-cover.png</strong> обновляет текущую обложку, если её экспорт включён.</p><p>При смене трека файлы заменяются на месте и остаются на вашем компьютере. Доставка в Last.fm и необязательный desktop companion работают отдельно.</p>`,
+      obsTitle: "Добавьте файлы в OBS",
+      obsBody: `<ol><li>Добавьте источник <strong>Text (GDI+)</strong>, включите чтение из файла и выберите <strong>now-playing.txt</strong>.</li><li>Добавьте источник <strong>Image</strong> для <strong>now-playing-cover.png</strong>.</li><li>Настройте стиль и расположение источников в сцене. OBS увидит последующие обновления без прямого управления со стороны расширения.</li></ol><p>JSON-файл подходит оверлеям, которым нужны отдельные значения исполнителя, названия, альбома или обложки.</p>`,
+      healthTitle: "Проверьте состояние экспорта",
+      healthBody: `<p>Откройте <strong>Control health</strong> и найдите строку <strong>Now Playing files</strong>. Значение <strong>writing - just now</strong> подтверждает недавнее обновление, а <strong>permission needed</strong> означает, что Chrome нужно снова предоставить папку.</p><p>Если устарели сами данные трека, запустите <strong>Repair controls</strong> и перезагрузите вкладку Яндекс Музыки. Разрешение на папку не исправляет неактивное подключение к странице.</p>`
     }
   },
   de: {
