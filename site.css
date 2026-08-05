@@ -1344,7 +1344,7 @@ footer {
 }
 
 .player-stage {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
 }
 
 .panel-stage {
@@ -1393,6 +1393,17 @@ footer {
   background: #292b2f;
   color: #f4f5f6;
   box-shadow: 0 22px 60px var(--document-shadow);
+}
+
+.shortcut-board.screenshot-board {
+  width: min(100%, 720px);
+  margin-inline: auto;
+}
+
+.shortcut-board.screenshot-board img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .shortcut-board-title {
@@ -1889,7 +1900,7 @@ footer {
 
   .player-stage {
     min-height: 230px;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
   }
 
   .panel-stage {
