@@ -14,6 +14,7 @@
   <link rel="icon" href="/assets/icon128.png">
   <script src="/site-theme.js"></script>
   <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
   <script src="/site-i18n.js" defer></script>
   <script type="application/ld+json">
     {
@@ -64,6 +65,7 @@
       </a>
       <div class="nav-links">
         <a href="#features" data-i18n="common.features">Features</a>
+        <a href="#guides" data-i18n="common.guides">Guides</a>
         <a href="#privacy" data-i18n="common.privacy">Privacy</a>
         <a href="/support" data-locale-link data-i18n="common.support">Support</a>
       </div>
@@ -206,6 +208,42 @@
       </article>
     </section>
 
+    <section class="guides-band" id="guides">
+      <div class="section guides-section">
+        <div class="guides-heading">
+          <p class="eyebrow" data-i18n="home.guidesEyebrow">Practical guides</p>
+          <h2 data-i18n="home.guidesTitle">Set up scrobbling and keep it healthy</h2>
+          <p data-i18n="home.guidesIntro">Focused walkthroughs for connecting Last.fm, using the direct-first relay fallback and resolving delayed scrobbles.</p>
+        </div>
+        <nav class="guide-index-list" aria-label="YM Bridge guides" data-i18n-aria="home.guidesAria">
+          <a href="/guides/install-lastfm" data-locale-link>
+            <span class="guide-index-number" aria-hidden="true">01</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideInstallTitle">Install and connect Last.fm</strong>
+              <span data-i18n="home.guideInstallBody">Authorize your account, confirm the saved session and verify the first direct scrobble.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/guides/cloud-relay" data-locale-link>
+            <span class="guide-index-number" aria-hidden="true">02</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideRelayTitle">Use Cloud relay when direct Last.fm access is unavailable</strong>
+              <span data-i18n="home.guideRelayBody">See when fallback starts, what is transmitted and how YM Bridge returns to direct delivery.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/guides/scrobble-queue" data-locale-link>
+            <span class="guide-index-number" aria-hidden="true">03</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideQueueTitle">Understand and retry the scrobble queue</strong>
+              <span data-i18n="home.guideQueueBody">Read Pending, Relay, Retry and Failed states without mistaking live playback for a lost track.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
     <section class="privacy-band" id="privacy">
       <div class="section privacy-layout">
         <div>
@@ -257,6 +295,7 @@
         <span>Yandex Music to Last.fm Bridge</span>
       </div>
       <div class="footer-links">
+        <a href="/#guides" data-locale-link data-i18n="common.guides">Guides</a>
         <a href="/privacy-policy" data-locale-link data-i18n="common.privacy">Privacy</a>
         <a href="/support" data-locale-link data-i18n="common.support">Support</a>
         <a data-store-link href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>

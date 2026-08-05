@@ -2097,6 +2097,26 @@ Object.assign(YM_BRIDGE_TRANSLATIONS["zh-TW"].privacy, {
   changesBody: "如資料處理方式有重大變更，本頁面會在相關版本發布前更新。如有支援或隱私權問題，請使用 Chrome 線上應用程式商店頁面上的聯絡方式或造訪<a href=\"support.html\" data-locale-link>支援頁面</a>。"
 });
 
+const YM_BRIDGE_GUIDE_TRANSLATIONS = typeof module !== "undefined" && module.exports
+  ? require("./site-guides-i18n.js")
+  : globalThis.YM_BRIDGE_GUIDE_TRANSLATIONS;
+
+if (!YM_BRIDGE_GUIDE_TRANSLATIONS?.en) {
+  throw new Error("YM Bridge guide translations are unavailable");
+}
+
+Object.entries(YM_BRIDGE_TRANSLATIONS).forEach(([locale, translation]) => {
+  const localizedSections = YM_BRIDGE_GUIDE_TRANSLATIONS[locale] || {};
+  Object.entries(YM_BRIDGE_GUIDE_TRANSLATIONS.en).forEach(([section, englishValues]) => {
+    translation[section] = Object.assign(
+      {},
+      translation[section] || {},
+      englishValues,
+      localizedSections[section] || {}
+    );
+  });
+});
+
 const YM_BRIDGE_STORE_SHORT_LABELS = {
   de: "Store",
   en: "Store",
@@ -2170,7 +2190,10 @@ const YM_BRIDGE_PUBLIC_ORIGIN = "https://www.ym-bridge.mytunnel.us.com";
 const YM_BRIDGE_PAGE_PATHS = Object.freeze({
   home: "/",
   support: "/support",
-  privacy: "/privacy-policy"
+  privacy: "/privacy-policy",
+  "guide-install": "/guides/install-lastfm",
+  "guide-relay": "/guides/cloud-relay",
+  "guide-queue": "/guides/scrobble-queue"
 });
 
 function normalizeYmBridgeLocale(input) {
@@ -2379,6 +2402,7 @@ if (typeof module !== "undefined" && module.exports) {
     normalizeLocale: normalizeYmBridgeLocale,
     detectLocale: detectYmBridgeLocale,
     getTranslation: getYmBridgeTranslation,
-    publicPageUrl: buildYmBridgePublicPageUrl
+    publicPageUrl: buildYmBridgePublicPageUrl,
+    pagePaths: YM_BRIDGE_PAGE_PATHS
   };
 }

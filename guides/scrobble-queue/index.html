@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" data-page="guide-queue">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Understand YM Bridge scrobble queue states, retry failed Last.fm deliveries, and diagnose missing track metadata or playback controls.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Fix Missing Last.fm Scrobbles and Retry the Queue | YM Bridge">
+  <meta property="og:description" content="A practical guide to pending, Relay, Retry and Failed queue states in the Yandex Music to Last.fm Bridge extension.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/guides/scrobble-queue">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-side-panel.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <title>Fix Missing Last.fm Scrobbles and Retry the Queue | YM Bridge</title>
+</head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Primary navigation" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="/" data-locale-link aria-label="Yandex Music to Last.fm Bridge home" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="/#features" data-locale-link data-i18n="common.features">Features</a>
+        <a href="/#guides" data-locale-link data-i18n="common.guides">Guides</a>
+        <a href="/support" data-locale-link data-i18n="common.support">Support</a>
+      </div>
+      <div class="theme-picker" data-theme-picker>
+        <button class="theme-button" type="button" data-theme-button aria-label="Theme: Auto" title="Theme: Auto" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name data-i18n="common.theme">Theme</span>
+        </button>
+        <div class="theme-menu" data-theme-menu role="menu" aria-label="Theme" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label data-i18n="common.themeAuto">Auto</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label data-i18n="common.themeLight">Light</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label data-i18n="common.themeDark">Dark</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">Language</span>
+        <select class="language-select" data-language-select aria-label="Language" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">Auto (browser)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Espa&ntilde;ol</option>
+          <option value="fr">Fran&ccedil;ais</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Portugu&ecirc;s (Brasil)</option>
+          <option value="ro">Rom&acirc;nă</option>
+          <option value="ru">Русский</option>
+          <option value="tr">T&uuml;rk&ccedil;e</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">Store</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-queue.eyebrow">Troubleshooting guide</p>
+        <h1 data-i18n="guide-queue.title">Understand and retry the scrobble queue</h1>
+        <p class="guide-intro" data-i18n="guide-queue.intro">The queue makes delayed Last.fm delivery visible instead of dropping tracks silently. Its state helps separate a current live listen from an item that really needs attention.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin" target="_blank" rel="noreferrer" data-i18n="home.openStore">Open in Chrome Web Store</a>
+          <a class="text-link" href="/support" data-locale-link data-i18n="common.support">Support</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="On this page" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">On this page</strong>
+          <a href="#normal" data-i18n="guide-queue.normalTitle">When an empty queue is normal</a>
+          <a href="#states" data-i18n="guide-queue.statesTitle">Read the queue states</a>
+          <a href="#retry" data-i18n="guide-queue.retryTitle">Retry safely</a>
+          <a href="#diagnose" data-i18n="guide-queue.diagnoseTitle">Diagnose the delivery path</a>
+          <a href="#controls" data-i18n="guide-queue.controlsTitle">Repair stale track data or controls</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-side-panel.png" alt="YM Bridge side panel with scrobble status, queue access and tools" data-i18n-alt="guide-queue.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="normal">
+            <h2 data-i18n="guide-queue.normalTitle">When an empty queue is normal</h2>
+            <div data-i18n-html="guide-queue.normalBody">
+              <p>The current track is handled live and does not have to remain in the visible queue. The message <strong>Queue is empty. Current playback is being handled live.</strong> is therefore a healthy state.</p>
+              <p>Use the panel's <strong>Last delivery</strong> value and your Last.fm recent tracks to confirm completed delivery. Do not expect the currently playing track to appear as a completed scrobble immediately.</p>
+            </div>
+          </section>
+
+          <section class="guide-section" id="states">
+            <h2 data-i18n="guide-queue.statesTitle">Read the queue states</h2>
+            <div data-i18n-html="guide-queue.statesBody">
+              <ul>
+                <li><strong>Pending</strong>: the track is waiting until it becomes eligible or until the next delivery pass.</li>
+                <li><strong>Relay</strong>: direct Last.fm delivery was unavailable and the item is waiting for the fallback batch.</li>
+                <li><strong>Retry</strong>: a previous attempt failed and the extension scheduled another one.</li>
+                <li><strong>Failed</strong>: the item needs another manual attempt or can be removed with <strong>Clear failed</strong>.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="guide-section" id="retry">
+            <h2 data-i18n="guide-queue.retryTitle">Retry safely</h2>
+            <div data-i18n-html="guide-queue.retryBody">
+              <ol>
+                <li>Open <strong>View queue</strong>.</li>
+                <li>Press <strong>Retry</strong> once. The extension immediately runs the eligible delivery work and updates each item's status.</li>
+                <li>Wait for the result before pressing it again. If the network path is still unavailable, repeated clicks cannot repair it.</li>
+                <li>Use <strong>Clear failed</strong> only when you want to discard failed items. It does not reconnect Last.fm.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="guide-section" id="diagnose">
+            <h2 data-i18n="guide-queue.diagnoseTitle">Diagnose the delivery path</h2>
+            <div data-i18n-html="guide-queue.diagnoseBody">
+              <p>Check the three status areas at the top of the panel: <strong>Last.fm</strong>, <strong>Yandex Music</strong> and <strong>Scrobble queue</strong>. Then read <strong>Delivery target</strong> below the current track.</p>
+              <ul>
+                <li><strong>direct to Last.fm</strong> means the browser API path is active.</li>
+                <li><strong>Cloud relay</strong> means fallback delivery is active or batching.</li>
+                <li><strong>connected</strong> confirms that a Last.fm session is saved. Direct profile or statistics requests can still be blocked by the current network.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="guide-section" id="controls">
+            <h2 data-i18n="guide-queue.controlsTitle">Repair stale track data or controls</h2>
+            <div data-i18n-html="guide-queue.controlsBody">
+              <p>If the title, artwork or playback state no longer follows Yandex Music, the delivery problem starts before Last.fm. Open <strong>Tools</strong>, choose <strong>Settings</strong>, run <strong>Control health</strong>, then use <strong>Repair controls</strong>. Reload the Yandex Music tab if the check still reports stale hooks.</p>
+              <p>When asking for help, use <strong>Copy diagnostics</strong> and remove anything you do not want to share. Never publish a Last.fm password or session key.</p>
+            </div>
+          </section>
+
+          <section class="related-guides" aria-label="Related guides" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">Related guides</h2>
+            <a href="/guides/install-lastfm" data-locale-link>
+              <span data-i18n="home.guideInstallTitle">Install and connect Last.fm</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="/guides/cloud-relay" data-locale-link>
+              <span data-i18n="home.guideRelayTitle">Use Cloud relay when direct Last.fm access is unavailable</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="/" data-locale-link data-i18n="common.backProduct">Back to the product page</a>
+            <a class="text-link" href="/privacy-policy" data-locale-link data-i18n="common.privacyPolicy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="/#guides" data-locale-link data-i18n="common.guides">Guides</a>
+        <a href="/privacy-policy" data-locale-link data-i18n="common.privacy">Privacy</a>
+        <a href="/support" data-locale-link data-i18n="common.support">Support</a>
+        <a data-store-link href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">Independent project. Not affiliated with Yandex or Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>
