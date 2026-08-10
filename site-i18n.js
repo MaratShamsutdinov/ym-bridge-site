@@ -2191,12 +2191,12 @@ const YM_BRIDGE_PAGE_PATHS = Object.freeze({
   home: "/",
   support: "/support",
   privacy: "/privacy-policy",
-  "guide-install": "/guides/install-lastfm",
-  "guide-relay": "/guides/cloud-relay",
-  "guide-queue": "/guides/scrobble-queue",
-  "guide-layouts": "/guides/player-layouts",
-  "guide-shortcuts": "/guides/keyboard-shortcuts",
-  "guide-obs": "/guides/obs-now-playing"
+  "guide-install": "/guides/install-lastfm/",
+  "guide-relay": "/guides/cloud-relay/",
+  "guide-queue": "/guides/scrobble-queue/",
+  "guide-layouts": "/guides/player-layouts/",
+  "guide-shortcuts": "/guides/keyboard-shortcuts/",
+  "guide-obs": "/guides/obs-now-playing/"
 });
 
 function normalizeYmBridgeLocale(input) {
