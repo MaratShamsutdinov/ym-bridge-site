@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="ko" dir="ltr" lang="ko" data-page="home">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chrome 사이드 패널과 플로팅 미니 플레이어에서 Yandex Music을 제어하고 선택적으로 Last.fm에 스크로블합니다.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Yandex Music Last.fm 스크로블러와 미니 플레이어 | YM Bridge">
+  <meta property="og:description" content="Chrome의 Yandex Music용 사이드 패널, 미니 플레이어 및 선택적 Last.fm 스크로블러입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/ko/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-side-panel.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://www.ym-bridge.mytunnel.us.com/#software-application",
+  "name": "Yandex Music to Last.fm Bridge",
+  "alternateName": "YM Bridge",
+  "description": "Chrome 사이드 패널과 플로팅 미니 플레이어에서 Yandex Music을 제어하고 선택적으로 Last.fm에 스크로블합니다.",
+  "url": "https://www.ym-bridge.mytunnel.us.com/ko/",
+  "installUrl": "https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin",
+  "downloadUrl": "https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Google Chrome",
+  "softwareVersion": "1.0.34",
+  "dateModified": "2026-09-18",
+  "isAccessibleForFree": true,
+  "image": "https://www.ym-bridge.mytunnel.us.com/assets/icon128.png",
+  "screenshot": [
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-side-panel.png",
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-mini-player.png",
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-light-theme.png",
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-lastfm-stats.png"
+  ],
+  "featureList": [
+    "Yandex Music playback controls",
+    "Optional direct Last.fm scrobbling with Cloud relay fallback",
+    "Chrome side panel and floating mini player",
+    "Now Playing export for OBS"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "inLanguage": "ko"
+}
+</script>
+  <title>Yandex Music Last.fm 스크로블러와 미니 플레이어 | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/ko/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/" hreflang="zh-TW" rel="alternate"></head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="common.skip">콘텐츠로 이동</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="기본 탐색" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="#top" aria-label="Yandex Music to Last.fm Bridge 홈" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features" data-i18n="common.features">기능</a>
+        <a href="#guides" data-i18n="common.guides">가이드</a>
+        <a href="#privacy" data-i18n="common.privacy">개인정보 보호</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="테마: 자동" title="테마: 자동" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">테마</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="테마" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">자동</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">라이트</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">다크</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">언어</span>
+        <select class="language-select" data-language-select="" aria-label="언어" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">자동(브라우저)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option selected value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_home" target="_blank" rel="noreferrer" aria-label="Chrome 웹 스토어" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome 웹 스토어</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">스토어</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <span class="hero-art" role="img" aria-label="앨범 커버와 Yandex Music 제어 기능을 보여 주는 집중 모드 플레이어" data-i18n-aria="home.heroArtAlt"></span>
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="home.heroEyebrow">Yandex Music용 Chrome 확장 프로그램</p>
+        <h1 data-i18n-html="home.heroTitle">Yandex Music<br>to Last.fm Bridge</h1>
+        <p class="hero-copy" data-i18n="home.heroCopy">현재 탭을 벗어나지 않고 재생 제어, 크기 조절이 가능한 미니 플레이어와 선택적 Last.fm 스크로블을 사용하세요.</p>
+        <div class="hero-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_home" target="_blank" rel="noreferrer" data-i18n="home.openStore">Chrome 웹 스토어에서 열기</a>
+          <a class="button secondary" href="#features" data-i18n="home.seeHow">작동 방식 보기</a>
+        </div>
+        <p class="hero-note" data-i18n="home.heroNote">확장 프로그램에는 광고, 제품 분석 또는 행동 추적이 없습니다. 데스크톱 companion은 선택 사항입니다.</p>
+      </div>
+    </section>
+
+    <section class="signal-band" aria-label="주요 기능" data-i18n-aria="home.signalAria">
+      <div class="signal-inner">
+        <div><strong data-i18n="home.signalPanelTitle">사이드 패널</strong><span data-i18n="home.signalPanelBody">어떤 탭 옆에서도 제어</span></div>
+        <div><strong data-i18n="home.signalMiniTitle">미니 플레이어</strong><span data-i18n="home.signalMiniBody">크기 조절 가능한 플로팅 창</span></div>
+        <div><strong>Last.fm</strong><span data-i18n="home.signalLastfmBody">직접 전송 우선, relay는 대체 경로</span></div>
+        <div><strong data-i18n="home.signalObsTitle">OBS 내보내기</strong><span data-i18n="home.signalObsBody">TXT, JSON 및 커버</span></div>
+      </div>
+    </section>
+
+    <section class="section control-section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="home.controlEyebrow">하나의 제어 화면</p>
+        <h2 data-i18n="home.controlTitle">플레이어를 가까이에 두세요</h2>
+        <p data-i18n="home.controlBody">사이드 패널은 현재 Yandex Music 트랙을 따라가며 자주 쓰는 제어 기능을 하나의 간결한 화면에 모읍니다.</p>
+      </div>
+      <img class="wide-showcase" src="/assets/showcase-side-panel.png" alt="커버, 재생 제어, 스크로블 상태와 도구를 표시하는 어두운 사이드 패널" data-i18n-alt="home.controlImageAlt" width="1280" height="800" loading="lazy">
+    </section>
+
+    <section class="section showcase-grid" aria-label="플레이어 보기" data-i18n-aria="home.playerViewsAria">
+      <article class="showcase-card">
+        <img src="/assets/showcase-mini-player.png" alt="밝은 테마와 어두운 테마의 크기 조절 가능한 미니 플레이어" data-i18n-alt="home.miniImageAlt" width="1280" height="800" loading="lazy">
+        <div>
+          <p class="eyebrow" data-i18n="home.miniEyebrow">플로팅 제어</p>
+          <h2 data-i18n="home.miniTitle">미니 플레이어</h2>
+          <p data-i18n="home.miniBody">별도 창을 열고 간단한 제어 화면부터 커버 중심 보기까지 크기를 조절해 다른 디스플레이에 둘 수 있습니다.</p>
+        </div>
+      </article>
+      <article class="showcase-card reverse">
+        <img src="/assets/showcase-light-theme.png" alt="밝은 테마의 Yandex Music 사이드 패널" data-i18n-alt="home.themeImageAlt" width="1280" height="800" loading="lazy">
+        <div>
+          <p class="eyebrow" data-i18n="home.themeEyebrow">모양</p>
+          <h2 data-i18n="home.themeTitle">밝게 또는 어둡게</h2>
+          <p data-i18n="home.themeBody">데스크톱에 맞게 패널을 설정하세요. 앨범 커버에서 가져온 강조 색상이 인터페이스를 복잡하게 만들지 않으면서 현재 트랙을 돋보이게 합니다.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="feature-band">
+      <div class="section feature-layout">
+        <div class="feature-copy">
+          <p class="eyebrow" data-i18n="home.scrobbleEyebrow">재생 버튼 그 이상</p>
+          <h2 data-i18n="home.scrobbleTitle">확인할 수 있는 스크로블</h2>
+          <p data-i18n="home.scrobbleBody">필요할 때 Last.fm을 연결하세요. 확장 프로그램은 전송 대기열을 표시하고 실패한 항목을 다시 시도하며 직접 연결 시 상세한 청취 통계를 제공합니다.</p>
+          <ul class="feature-list">
+            <li data-i18n="home.scrobbleDirect">브라우저에서 Last.fm으로 직접 전송</li>
+            <li data-i18n="home.scrobbleRelay">직접 접근할 수 없을 때 Cloud relay로 자동 대체하며 비활성화 가능</li>
+            <li data-i18n="home.scrobbleQueue">대기열 상태, 재시도 및 제어 진단</li>
+            <li data-i18n="home.scrobbleShortcuts">다시 지정할 수 있는 Chrome 키보드 단축키</li>
+          </ul>
+        </div>
+        <img src="/assets/showcase-lastfm-stats.png" alt="차트, 앨범 및 최근 재생한 곡이 포함된 Last.fm 상세 통계" data-i18n-alt="home.scrobbleImageAlt" width="1280" height="800" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section details-grid" aria-label="추가 기능" data-i18n-aria="home.detailsAria">
+      <article>
+        <span class="detail-mark green" aria-hidden="true"></span>
+        <h3 data-i18n="home.playbackTitle">재생</h3>
+        <p data-i18n="home.playbackBody">Yandex Music에서 제공하는 경우 재생, 일시중지, 탐색, 볼륨 및 트랙 변경과 좋아요 또는 싫어요 상태를 제어할 수 있습니다.</p>
+      </article>
+      <article>
+        <span class="detail-mark blue" aria-hidden="true"></span>
+        <h3 data-i18n="home.filesTitle">Now Playing 파일</h3>
+        <p data-i18n="home.filesBody">폴더 접근 권한을 명시적으로 부여한 후 현재 트랙을 TXT와 JSON으로 저장하고 OBS용 로컬 커버 파일을 선택적으로 추가할 수 있습니다.</p>
+      </article>
+      <article>
+        <span class="detail-mark red" aria-hidden="true"></span>
+        <h3 data-i18n="home.coverTitle">커버 작업</h3>
+        <p data-i18n="home.coverBody">커버를 열고 URL 또는 이미지를 복사하며 패널이나 미니 플레이어에서 아티스트 - 트랙 값을 복사할 수 있습니다.</p>
+      </article>
+      <article>
+        <span class="detail-mark gold" aria-hidden="true"></span>
+        <h3 data-i18n="home.companionCardTitle">선택적 companion</h3>
+        <p data-i18n="home.companionCardBody">Windows companion은 트랙 변경 시 기본 알림을 추가합니다. 재생과 스크로블은 계속 확장 프로그램이 담당합니다.</p>
+      </article>
+    </section>
+
+    <section class="guides-band" id="guides">
+      <div class="section guides-section">
+        <div class="guides-heading">
+          <p class="eyebrow" data-i18n="home.guidesEyebrow">실용 가이드</p>
+          <h2 data-i18n="home.guidesTitle">스크로블링을 설정하고 안정적으로 유지하세요</h2>
+          <p data-i18n="home.guidesIntro">Last.fm 연결, 직접 전송 우선 relay 대체 경로, 지연된 스크로블 해결 방법을 안내합니다.</p>
+        </div>
+        <nav class="guide-index-list" aria-label="YM Bridge 가이드" data-i18n-aria="home.guidesAria">
+          <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/install-lastfm/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">01</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideInstallTitle">Last.fm 설치 및 연결</strong>
+              <span data-i18n="home.guideInstallBody">계정을 승인하고 저장된 세션과 첫 직접 스크로블을 확인합니다.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/cloud-relay/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">02</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideRelayTitle">Last.fm 직접 연결이 불가능할 때 Cloud relay 사용</strong>
+              <span data-i18n="home.guideRelayBody">대체 경로가 시작되는 조건, 전송되는 데이터, 직접 전송으로 돌아가는 방식을 확인합니다.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/scrobble-queue/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">03</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideQueueTitle">스크로블 대기열 이해 및 재시도</strong>
+              <span data-i18n="home.guideQueueBody">현재 재생을 누락으로 오해하지 않고 Pending, Relay, Retry, Failed 상태를 읽습니다.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/player-layouts/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">04</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideLayoutsTitle">미니 플레이어와 사이드 패널 레이아웃 살펴보기</strong>
+              <span data-i18n="home.guideLayoutsBody">전체 화면과 Progress disc, Ambient, Control deck, Glass card를 비교하세요.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/keyboard-shortcuts/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">05</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideShortcutsTitle">키보드 단축키로 재생 제어하기</strong>
+              <span data-i18n="home.guideShortcutsBody">실용적인 키 조합을 지정하고 전역으로 동작할 재생 명령을 선택하세요.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/obs-now-playing/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">06</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideObsTitle">OBS용 Now Playing 파일 내보내기</strong>
+              <span data-i18n="home.guideObsBody">현재 Yandex Music 트랙과 동기화되는 TXT, JSON 및 커버 파일을 로컬에 기록합니다.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="privacy-band" id="privacy">
+      <div class="section privacy-layout">
+        <div>
+          <p class="eyebrow" data-i18n="home.privacyEyebrow">기본적으로 로컬 처리</p>
+          <h2 data-i18n="home.privacyTitle">청취 환경은 사용자가 직접 제어합니다</h2>
+        </div>
+        <div class="privacy-points">
+          <p data-i18n-html="home.privacyNoAnalytics"><strong>광고나 제품 분석이 없습니다.</strong> 설정과 Last.fm 세션은 Chrome 확장 프로그램 저장소에 보관됩니다.</p>
+          <p data-i18n-html="home.privacyActions"><strong>명시적 작업만 수행합니다.</strong> 파일과 클립보드 접근은 권한을 부여하거나 해당 명령을 누른 후에만 이루어집니다.</p>
+          <p data-i18n-html="home.privacyNetwork"><strong>제어 가능한 네트워크 경로.</strong> 항상 Last.fm 직접 전송을 먼저 시도합니다. Cloud relay는 끌 수 있으며 companion은 알림을 활성화한 경우에만 사용됩니다.</p>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ko/privacy-policy/" data-locale-link="" data-i18n="home.privacyLink">전체 개인정보처리방침 읽기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section companion" id="companion">
+      <div>
+        <p class="eyebrow" data-i18n="home.companionEyebrow">선택적 Windows companion</p>
+        <h2 data-i18n="home.companionTitle">기본 트랙 변경 알림</h2>
+        <p data-i18n="home.companionBody">확장 프로그램은 자체적으로 완전하게 작동합니다. 트랙이 바뀔 때 작은 Windows 알림 창을 원하는 경우에만 companion을 설치하세요.</p>
+        <div class="companion-downloads" aria-label="Windows companion 다운로드" data-i18n-aria="home.companionDownloadsAria">
+          <a class="companion-store" href="https://apps.microsoft.com/detail/9NPR697GHTBN">
+            <span class="companion-store-heading">
+              <span class="companion-option-name" data-i18n="home.companionStore">Microsoft Store에서 받기</span>
+              <span class="companion-recommended" data-i18n="home.companionRecommended">권장</span>
+            </span>
+            <span class="companion-option-meta" data-i18n="home.companionStoreMeta">서명된 빌드 · 자동 업데이트</span>
+          </a>
+          <div class="companion-portable">
+            <div>
+              <span class="companion-option-name" data-i18n="home.companionPortable">포터블 버전</span>
+              <span class="companion-option-meta" data-i18n="home.companionPortableMeta">Windows x64 · 수동 업데이트</span>
+            </div>
+            <div class="companion-portable-links">
+              <a href="/downloads/ym-bridge-companion-windows-x64-v0.1.2.zip" data-i18n="home.companionDownload">ZIP 다운로드</a>
+              <a href="/downloads/SHA256SUMS.txt">SHA-256</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="/assets/companion-store-preview.png" alt="Windows 기본 트랙 변경 알림을 보여 주는 YM Bridge Companion 미리보기" data-i18n-alt="home.companionImageAlt" width="1536" height="1024" loading="lazy">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/#guides" data-locale-link="" data-i18n="common.guides">가이드</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/privacy-policy/" data-locale-link="" data-i18n="common.privacy">개인정보 보호</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_home" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome 웹 스토어</a>
+      </div>
+      <p data-i18n="common.disclaimer">독립 프로젝트이며 Yandex 또는 Last.fm과 제휴하지 않습니다.</p>
+    </div>
+  </footer>
+</body>
+</html>

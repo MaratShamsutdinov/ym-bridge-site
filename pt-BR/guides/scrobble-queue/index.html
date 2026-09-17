@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="pt-BR" dir="ltr" lang="pt-BR" data-page="guide-queue">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Entenda a fila do YM Bridge, repita entregas com falha ao Last.fm e diagnostique metadados de faixa ou controles ausentes.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Corrigir scrobbles do Last.fm e repetir a fila | YM Bridge">
+  <meta property="og:description" content="Entenda a fila do YM Bridge, repita entregas com falha ao Last.fm e diagnostique metadados de faixa ou controles ausentes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/scrobble-queue/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-scrobble-queue.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <title>Corrigir scrobbles do Last.fm e repetir a fila | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/scrobble-queue/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/scrobble-queue/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/scrobble-queue/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/scrobble-queue/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/scrobble-queue/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/scrobble-queue/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/scrobble-queue/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/scrobble-queue/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/scrobble-queue/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/scrobble-queue/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/scrobble-queue/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/scrobble-queue/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/scrobble-queue/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/scrobble-queue/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/scrobble-queue/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/scrobble-queue/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/scrobble-queue/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Navegação principal" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/" data-locale-link="" aria-label="Página inicial do Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/#features" data-locale-link="" data-i18n="common.features">Recursos</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/#guides" data-locale-link="" data-i18n="common.guides">Guias</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/support/" data-locale-link="" data-i18n="common.support">Suporte</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="Tema: Automático" title="Tema: Automático" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">Tema</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="Tema" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">Automático</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">Claro</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">Escuro</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">Idioma</span>
+        <select class="language-select" data-language-select="" aria-label="Idioma" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">Automático (navegador)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option selected value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=pt-BR_guide-queue" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">Loja</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-queue.eyebrow">Guia de diagnóstico</p>
+        <h1 data-i18n="guide-queue.title">Entender e repetir a fila de scrobbles</h1>
+        <p class="guide-intro" data-i18n="guide-queue.intro">A fila torna atrasos de entrega ao Last.fm visíveis em vez de perder faixas em silêncio. O estado separa uma reprodução atual de um item que precisa de atenção.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=pt-BR_guide-queue" target="_blank" rel="noreferrer" data-i18n="home.openStore">Abrir na Chrome Web Store</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/support/" data-locale-link="" data-i18n="common.support">Suporte</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="Nesta página" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">Nesta página</strong>
+          <a href="#normal" data-i18n="guide-queue.normalTitle">Quando uma fila vazia é normal</a>
+          <a href="#states" data-i18n="guide-queue.statesTitle">Leia os estados da fila</a>
+          <a href="#retry" data-i18n="guide-queue.retryTitle">Repita com segurança</a>
+          <a href="#diagnose" data-i18n="guide-queue.diagnoseTitle">Diagnostique o caminho de entrega</a>
+          <a href="#controls" data-i18n="guide-queue.controlsTitle">Repare dados ou controles desatualizados</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-scrobble-queue.png" alt="Painel lateral do YM Bridge com estado, fila e ferramentas de scrobbling" data-i18n-alt="guide-queue.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="normal">
+            <h2 data-i18n="guide-queue.normalTitle">Quando uma fila vazia é normal</h2>
+            <div data-i18n-html="guide-queue.normalBody"><p>A faixa atual é tratada ao vivo e não precisa permanecer na fila visível. Por isso, <strong>Queue is empty. Current playback is being handled live.</strong> indica um estado saudável.</p><p>Use <strong>Last delivery</strong> e as faixas recentes do Last.fm para confirmar uma entrega concluída. A faixa atual não aparece imediatamente como scrobble concluído.</p></div>
+          </section>
+
+          <section class="guide-section" id="states">
+            <h2 data-i18n="guide-queue.statesTitle">Leia os estados da fila</h2>
+            <div data-i18n-html="guide-queue.statesBody"><ul><li><strong>Pending</strong>: a faixa aguarda ficar válida ou a próxima passagem de entrega.</li><li><strong>Relay</strong>: a entrega direta estava indisponível e o item espera o lote de fallback.</li><li><strong>Retry</strong>: uma tentativa anterior falhou e a extensão programou outra.</li><li><strong>Failed</strong>: é necessária outra tentativa manual ou o item pode ser removido com <strong>Clear failed</strong>.</li></ul></div>
+          </section>
+
+          <section class="guide-section" id="retry">
+            <h2 data-i18n="guide-queue.retryTitle">Repita com segurança</h2>
+            <div data-i18n-html="guide-queue.retryBody"><ol><li>Abra <strong>View queue</strong>.</li><li>Pressione <strong>Retry</strong> uma vez. A extensão executa as entregas válidas e atualiza cada estado.</li><li>Espere o resultado. Se o caminho de rede continuar indisponível, cliques repetidos não podem corrigi-lo.</li><li>Use <strong>Clear failed</strong> apenas para descartar itens com falha. Isso não reconecta o Last.fm.</li></ol></div>
+          </section>
+
+          <section class="guide-section" id="diagnose">
+            <h2 data-i18n="guide-queue.diagnoseTitle">Diagnostique o caminho de entrega</h2>
+            <div data-i18n-html="guide-queue.diagnoseBody"><p>Confira no topo do painel <strong>Last.fm</strong>, <strong>Yandex Music</strong> e <strong>Scrobble queue</strong>. Depois leia <strong>Delivery target</strong> abaixo da faixa atual.</p><ul><li><strong>direct to Last.fm</strong> indica que o caminho direto do navegador está ativo.</li><li><strong>Cloud relay</strong> indica fallback ativo ou formação de lote.</li><li><strong>connected</strong> confirma uma sessão salva do Last.fm. Solicitações diretas de perfil ou estatísticas ainda podem estar bloqueadas pela rede.</li></ul></div>
+          </section>
+
+          <section class="guide-section" id="controls">
+            <h2 data-i18n="guide-queue.controlsTitle">Repare dados ou controles desatualizados</h2>
+            <div data-i18n-html="guide-queue.controlsBody"><p>Se título, capa ou reprodução deixarem de acompanhar o Yandex Music, o problema começa antes do Last.fm. Abra <strong>Tools</strong>, escolha <strong>Settings</strong>, execute <strong>Control health</strong> e use <strong>Repair controls</strong>. Recarregue a aba do Yandex Music se a verificação ainda indicar hooks desatualizados.</p><p>Ao pedir ajuda, use <strong>Copy diagnostics</strong> e remova o que não quiser compartilhar. Nunca publique senha ou chave de sessão do Last.fm.</p></div>
+          </section>
+
+          <section class="related-guides" aria-label="Guias relacionados" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">Guias relacionados</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/install-lastfm/" data-locale-link="">
+              <span data-i18n="home.guideInstallTitle">Instalar e conectar o Last.fm</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/cloud-relay/" data-locale-link="">
+              <span data-i18n="home.guideRelayTitle">Usar Cloud relay quando o Last.fm não estiver disponível diretamente</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/" data-locale-link="" data-i18n="common.backProduct">Voltar à página do produto</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">Política de Privacidade</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/#guides" data-locale-link="" data-i18n="common.guides">Guias</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/privacy-policy/" data-locale-link="" data-i18n="common.privacy">Privacidade</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/support/" data-locale-link="" data-i18n="common.support">Suporte</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=pt-BR_guide-queue" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">Projeto independente. Não é afiliado ao Yandex nem ao Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>

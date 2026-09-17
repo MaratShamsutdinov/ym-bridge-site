@@ -54,7 +54,7 @@ const YM_BRIDGE_TRANSLATIONS = {
       scrobbleRelay: "Automatic Cloud relay fallback when direct access is unavailable; it can be disabled",
       scrobbleQueue: "Queue states, retries and control-health diagnostics",
       scrobbleShortcuts: "Reassignable Chrome keyboard shortcuts",
-      scrobbleImageAlt: "Settings and control-health diagnostics views",
+      scrobbleImageAlt: "Detailed Last.fm statistics with charts, albums and recent tracks",
       detailsAria: "Additional capabilities",
       playbackTitle: "Playback",
       playbackBody: "Play, pause, seek, adjust volume, switch tracks, and manage like or dislike state when Yandex Music exposes it.",
@@ -201,7 +201,7 @@ const YM_BRIDGE_TRANSLATIONS = {
       scrobbleRelay: "Автоматический Cloud relay при недоступности прямого соединения; его можно отключить",
       scrobbleQueue: "Состояния очереди, повторные попытки и диагностика управления",
       scrobbleShortcuts: "Переназначаемые горячие клавиши Chrome",
-      scrobbleImageAlt: "Настройки и диагностика управления",
+      scrobbleImageAlt: "Подробная статистика Last.fm с графиками, альбомами и последними треками",
       detailsAria: "Дополнительные возможности",
       playbackTitle: "Воспроизведение",
       playbackBody: "Воспроизводите, ставьте на паузу, перематывайте, меняйте громкость и треки, управляйте лайком и дизлайком, когда Яндекс Музыка их предоставляет.",
@@ -304,7 +304,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Automatischer Cloud-relay-Fallback bei fehlendem Direktzugriff; deaktivierbar",
       scrobbleQueue: "Warteschlangenstatus, Wiederholungen und Steuerungsdiagnose",
       scrobbleShortcuts: "Neu belegbare Chrome-Tastenkombinationen",
-      scrobbleImageAlt: "Ansichten für Einstellungen und Steuerungsdiagnose",
+      scrobbleImageAlt: "Detaillierte Last.fm-Statistiken mit Diagrammen, Alben und zuletzt gehörten Titeln",
       detailsAria: "Weitere Funktionen",
       playbackTitle: "Wiedergabe",
       playbackBody: "Wiedergabe, Pause, Suchlauf, Lautstärke, Titelwechsel sowie Gefällt-mir- und Gefällt-mir-nicht-Status steuern, sofern Yandex Music sie bereitstellt.",
@@ -404,7 +404,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Cloud relay automático cuando no hay acceso directo; se puede desactivar",
       scrobbleQueue: "Estados de la cola, reintentos y diagnóstico de controles",
       scrobbleShortcuts: "Atajos de teclado de Chrome reasignables",
-      scrobbleImageAlt: "Vistas de configuración y diagnóstico de controles",
+      scrobbleImageAlt: "Estadísticas detalladas de Last.fm con gráficos, álbumes y pistas recientes",
       detailsAria: "Funciones adicionales",
       playbackTitle: "Reproducción",
       playbackBody: "Reproduce, pausa, desplázate, ajusta el volumen, cambia de pista y controla Me gusta o No me gusta cuando Yandex Music lo permite.",
@@ -507,7 +507,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Cloud relay automatique si l'accès direct est indisponible, avec possibilité de le désactiver",
       scrobbleQueue: "État de la file, nouvelles tentatives et diagnostic des commandes",
       scrobbleShortcuts: "Raccourcis clavier Chrome réassignables",
-      scrobbleImageAlt: "Vues des paramètres et du diagnostic des commandes",
+      scrobbleImageAlt: "Statistiques détaillées de Last.fm avec graphiques, albums et titres récents",
       detailsAria: "Fonctionnalités supplémentaires",
       playbackTitle: "Lecture",
       playbackBody: "Lisez, mettez en pause, naviguez, réglez le volume, changez de titre et gérez les mentions J'aime ou Je n'aime pas lorsque Yandex Music les expose.",
@@ -607,7 +607,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Automatyczny Cloud relay, gdy dostęp bezpośredni jest niedostępny; można go wyłączyć",
       scrobbleQueue: "Stany kolejki, ponowienia i diagnostyka sterowania",
       scrobbleShortcuts: "Skróty klawiaturowe Chrome z możliwością zmiany",
-      scrobbleImageAlt: "Widoki ustawień i diagnostyki sterowania",
+      scrobbleImageAlt: "Szczegółowe statystyki Last.fm z wykresami, albumami i ostatnio odtwarzanymi utworami",
       detailsAria: "Dodatkowe możliwości",
       playbackTitle: "Odtwarzanie",
       playbackBody: "Odtwarzaj, wstrzymuj, przewijaj, reguluj głośność, zmieniaj utwory oraz zarządzaj polubieniem i nielubieniem, gdy Yandex Music je udostępnia.",
@@ -710,7 +710,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Cloud relay automático quando o acesso direto não está disponível; pode ser desativado",
       scrobbleQueue: "Estados da fila, novas tentativas e diagnóstico dos controles",
       scrobbleShortcuts: "Atalhos de teclado do Chrome reconfiguráveis",
-      scrobbleImageAlt: "Visualizações de configurações e diagnóstico dos controles",
+      scrobbleImageAlt: "Estatísticas detalhadas do Last.fm com gráficos, álbuns e faixas recentes",
       detailsAria: "Recursos adicionais",
       playbackTitle: "Reprodução",
       playbackBody: "Reproduza, pause, avance, ajuste o volume, troque de faixa e gerencie curtir ou não curtir quando o Yandex Music disponibilizar essas ações.",
@@ -810,7 +810,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Cloud relay automat când accesul direct nu este disponibil; poate fi dezactivat",
       scrobbleQueue: "Stări ale cozii, reîncercări și diagnosticarea comenzilor",
       scrobbleShortcuts: "Comenzi rapide Chrome care pot fi realocate",
-      scrobbleImageAlt: "Vizualizări ale setărilor și diagnosticării comenzilor",
+      scrobbleImageAlt: "Statistici detaliate Last.fm cu grafice, albume și piese recente",
       detailsAria: "Funcții suplimentare",
       playbackTitle: "Redare",
       playbackBody: "Redă, pune pe pauză, derulează, reglează volumul, schimbă piesele și gestionează aprecierea sau neaprecierea când Yandex Music le pune la dispoziție.",
@@ -910,7 +910,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Doğrudan erişim olmadığında otomatik Cloud relay yedeği; devre dışı bırakılabilir",
       scrobbleQueue: "Kuyruk durumları, yeniden denemeler ve kontrol tanılaması",
       scrobbleShortcuts: "Yeniden atanabilir Chrome klavye kısayolları",
-      scrobbleImageAlt: "Ayarlar ve kontrol tanılama görünümleri",
+      scrobbleImageAlt: "Grafikler, albümler ve son çalınan parçalarla ayrıntılı Last.fm istatistikleri",
       detailsAria: "Ek özellikler",
       playbackTitle: "Oynatma",
       playbackBody: "Yandex Music sunduğunda oynatın, duraklatın, ileri veya geri sarın, ses düzeyini ve parçaları değiştirin, beğenme ya da beğenmeme durumunu yönetin.",
@@ -1010,7 +1010,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "Автоматичний Cloud relay, коли пряме з'єднання недоступне; його можна вимкнути",
       scrobbleQueue: "Стани черги, повторні спроби та діагностика керування",
       scrobbleShortcuts: "Перепризначувані клавіатурні скорочення Chrome",
-      scrobbleImageAlt: "Налаштування та діагностика керування",
+      scrobbleImageAlt: "Докладна статистика Last.fm із графіками, альбомами та останніми треками",
       detailsAria: "Додаткові можливості",
       playbackTitle: "Відтворення",
       playbackBody: "Відтворюйте, ставте на паузу, перемотуйте, змінюйте гучність і треки, керуйте вподобанням і невподобанням, коли Yandex Music їх надає.",
@@ -1113,7 +1113,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "直接アクセスできない場合は Cloud relay に自動フォールバック。無効化も可能",
       scrobbleQueue: "キューの状態、再試行、操作診断",
       scrobbleShortcuts: "割り当て変更可能な Chrome キーボードショートカット",
-      scrobbleImageAlt: "設定と操作診断の画面",
+      scrobbleImageAlt: "グラフ、アルバム、最近の再生曲を含むLast.fmの詳細な統計",
       detailsAria: "その他の機能",
       playbackTitle: "再生操作",
       playbackBody: "再生、一時停止、シーク、音量調整、トラック切り替えに加え、Yandex Music が提供する場合は高評価と低評価も操作できます。",
@@ -1213,7 +1213,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "직접 접근할 수 없을 때 Cloud relay로 자동 대체하며 비활성화 가능",
       scrobbleQueue: "대기열 상태, 재시도 및 제어 진단",
       scrobbleShortcuts: "다시 지정할 수 있는 Chrome 키보드 단축키",
-      scrobbleImageAlt: "설정 및 제어 진단 화면",
+      scrobbleImageAlt: "차트, 앨범 및 최근 재생한 곡이 포함된 Last.fm 상세 통계",
       detailsAria: "추가 기능",
       playbackTitle: "재생",
       playbackBody: "Yandex Music에서 제공하는 경우 재생, 일시중지, 탐색, 볼륨 및 트랙 변경과 좋아요 또는 싫어요 상태를 제어할 수 있습니다.",
@@ -1313,7 +1313,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "无法直接访问时自动使用 Cloud relay 备用通道；可随时关闭",
       scrobbleQueue: "队列状态、重试和控制诊断",
       scrobbleShortcuts: "可重新分配的 Chrome 键盘快捷键",
-      scrobbleImageAlt: "设置和控制诊断界面",
+      scrobbleImageAlt: "包含图表、专辑和最近播放曲目的 Last.fm 详细统计",
       detailsAria: "其他功能",
       playbackTitle: "播放",
       playbackBody: "播放、暂停、跳转、调整音量、切换曲目，并在 Yandex Music 提供时管理喜欢或不喜欢状态。",
@@ -1413,7 +1413,7 @@ Object.assign(YM_BRIDGE_TRANSLATIONS, {
       scrobbleRelay: "無法直接存取時自動使用 Cloud relay 備援；可隨時關閉",
       scrobbleQueue: "佇列狀態、重試和控制診斷",
       scrobbleShortcuts: "可重新指派的 Chrome 鍵盤快速鍵",
-      scrobbleImageAlt: "設定和控制診斷介面",
+      scrobbleImageAlt: "包含圖表、專輯和最近播放曲目的 Last.fm 詳細統計",
       detailsAria: "其他功能",
       playbackTitle: "播放",
       playbackBody: "播放、暫停、跳轉、調整音量、切換曲目，並在 Yandex Music 提供時管理喜歡或不喜歡狀態。",
@@ -2180,8 +2180,14 @@ Object.entries(YM_BRIDGE_HOME_SEO_TITLES).forEach(([locale, title]) => {
   YM_BRIDGE_TRANSLATIONS[locale].home.metaTitle = title;
 });
 
+const YM_BRIDGE_HE_TRANSLATION = typeof module !== "undefined" && module.exports
+  ? require("./site-he.js")
+  : globalThis.YM_BRIDGE_HE_TRANSLATION;
+if (!YM_BRIDGE_HE_TRANSLATION?.home) throw new Error("YM Bridge Hebrew translations are unavailable");
+YM_BRIDGE_TRANSLATIONS.he = YM_BRIDGE_HE_TRANSLATION;
+
 const YM_BRIDGE_SUPPORTED_LOCALES = Object.freeze([
-  "de", "en", "es", "fr", "ja", "ko", "pl", "pt-BR", "ro", "ru", "tr", "uk", "zh-CN", "zh-TW"
+  "de", "en", "es", "fr", "he", "ja", "ko", "pl", "pt-BR", "ro", "ru", "tr", "uk", "zh-CN", "zh-TW"
 ]);
 
 const YM_BRIDGE_LOCALE_STORAGE_KEY = "ym-bridge-site-language";
@@ -2213,6 +2219,7 @@ function normalizeYmBridgeLocale(input) {
   if (lower.startsWith("pt")) return "pt-BR";
 
   const language = lower.split("-")[0];
+  if (language === "iw") return "he";
   return YM_BRIDGE_SUPPORTED_LOCALES.find(locale => locale.toLowerCase() === language) || null;
 }
 
@@ -2229,12 +2236,41 @@ function getYmBridgeTranslation(locale, path) {
   return read(YM_BRIDGE_TRANSLATIONS[locale]) ?? read(YM_BRIDGE_TRANSLATIONS.en) ?? path;
 }
 
+// Public locale paths have fully translated HTML, even before JavaScript runs.
 function buildYmBridgePublicPageUrl(page, locale = "en") {
-  const path = YM_BRIDGE_PAGE_PATHS[page] || YM_BRIDGE_PAGE_PATHS.home;
-  const url = new URL(path, YM_BRIDGE_PUBLIC_ORIGIN);
+  const pagePath = YM_BRIDGE_PAGE_PATHS[page] || YM_BRIDGE_PAGE_PATHS.home;
   const normalizedLocale = normalizeYmBridgeLocale(locale) || "en";
-  if (normalizedLocale !== "en") url.searchParams.set("lang", normalizedLocale);
-  return url.toString();
+  const localizedPath = normalizedLocale === "en" ? pagePath
+    : `/${normalizedLocale}${pagePath.endsWith("/") ? pagePath : `${pagePath}/`}`;
+  return new URL(localizedPath, YM_BRIDGE_PUBLIC_ORIGIN).toString();
+}
+
+function ymBridgeLocaleFromPath(pathname) {
+  const first = String(pathname || "/").split("/")[1];
+  return YM_BRIDGE_SUPPORTED_LOCALES.find(locale => locale.toLowerCase() === first.toLowerCase()) || "en";
+}
+
+function ymBridgePageFromPath(pathname) {
+  let pagePath = String(pathname || "/");
+  const first = pagePath.split("/")[1];
+  if (YM_BRIDGE_SUPPORTED_LOCALES.some(locale => locale.toLowerCase() === first.toLowerCase())) {
+    pagePath = pagePath.slice(first.length + 1) || "/";
+  }
+  pagePath = pagePath.replace(/\/index\.html$/, "/").replace(/\.html$/, "").replace(/\/+$/, "") || "/";
+  return Object.keys(YM_BRIDGE_PAGE_PATHS).find(page =>
+    (YM_BRIDGE_PAGE_PATHS[page].replace(/\/+$/, "") || "/") === pagePath) || null;
+}
+
+function localizeYmBridgeUrl(source, locale, origin = YM_BRIDGE_PUBLIC_ORIGIN) {
+  const url = new URL(source, new URL("/", origin));
+  if (url.origin !== new URL(origin).origin && url.origin !== YM_BRIDGE_PUBLIC_ORIGIN) return url.toString();
+  const page = ymBridgePageFromPath(url.pathname);
+  if (!page) return url.toString();
+  const target = new URL(new URL(buildYmBridgePublicPageUrl(page, locale)).pathname, origin);
+  target.search = url.search;
+  target.searchParams.delete("lang");
+  target.hash = url.hash;
+  return target.toString();
 }
 
 function updateYmBridgeMeta(locale, page) {
@@ -2255,20 +2291,6 @@ function updateYmBridgeMeta(locale, page) {
   }
 }
 
-function updateYmBridgeCanonical(locale, preference, page) {
-  const canonicalLocale = preference === "auto" ? "en" : (normalizeYmBridgeLocale(preference) || locale);
-  const canonicalUrl = buildYmBridgePublicPageUrl(page, canonicalLocale);
-  let canonical = document.querySelector('link[rel="canonical"]');
-  if (!canonical) {
-    canonical = document.createElement("link");
-    canonical.rel = "canonical";
-    document.head.append(canonical);
-  }
-  canonical.href = canonicalUrl;
-
-  const ogUrl = document.querySelector('meta[property="og:url"]');
-  if (ogUrl) ogUrl.content = canonicalUrl;
-}
 
 function updateYmBridgeStoreLinks(locale, page) {
   document.querySelectorAll("[data-store-link]").forEach(link => {
@@ -2281,45 +2303,19 @@ function updateYmBridgeStoreLinks(locale, page) {
   });
 }
 
-function updateYmBridgeLocaleLinks(preference) {
+function updateYmBridgeLocaleLinks(locale) {
   document.querySelectorAll("[data-locale-link]").forEach(link => {
     const source = link.dataset.localeBase || link.getAttribute("href");
     if (!source) return;
     link.dataset.localeBase = source;
-
-    const url = new URL(source, new URL("/", window.location.href));
-    if (url.origin === window.location.origin) {
-      if (url.pathname === "/index.html") url.pathname = "/";
-      if (url.pathname === "/support.html") url.pathname = "/support";
-      if (url.pathname === "/privacy-policy.html") url.pathname = "/privacy-policy";
-    }
-    if (preference === "auto") url.searchParams.delete("lang");
-    else url.searchParams.set("lang", preference);
-    link.href = url.toString();
-  });
-}
-
-function updateYmBridgeAlternateLinks(page) {
-  document.querySelectorAll("link[data-i18n-alternate]").forEach(link => link.remove());
-
-  const append = (locale, href) => {
-    const link = document.createElement("link");
-    link.rel = "alternate";
-    link.hreflang = locale;
-    link.href = href;
-    link.dataset.i18nAlternate = "";
-    document.head.append(link);
-  };
-
-  append("x-default", buildYmBridgePublicPageUrl(page));
-  YM_BRIDGE_SUPPORTED_LOCALES.forEach(locale => {
-    append(locale, buildYmBridgePublicPageUrl(page, locale));
+    link.href = localizeYmBridgeUrl(source, locale, window.location.origin);
   });
 }
 
 function applyYmBridgeLocale(locale, preference) {
   const page = document.documentElement.dataset.page || "home";
   document.documentElement.lang = locale;
+  document.documentElement.dir = locale === "he" ? "rtl" : "ltr";
   document.documentElement.dataset.locale = locale;
 
   document.querySelectorAll("[data-i18n]").forEach(element => {
@@ -2342,56 +2338,45 @@ function applyYmBridgeLocale(locale, preference) {
   });
 
   updateYmBridgeMeta(locale, page);
-  updateYmBridgeCanonical(locale, preference, page);
   updateYmBridgeStoreLinks(locale, page);
-  updateYmBridgeLocaleLinks(preference);
-  updateYmBridgeAlternateLinks(page);
+  updateYmBridgeLocaleLinks(locale);
   document.dispatchEvent(new CustomEvent("ymbridge:localechange", {
     detail: { locale, preference }
   }));
 }
 
 function initializeYmBridgeI18n() {
-  const params = new URLSearchParams(window.location.search);
-  const requested = normalizeYmBridgeLocale(params.get("lang"));
-  let saved = null;
-  try {
-    saved = normalizeYmBridgeLocale(window.localStorage.getItem(YM_BRIDGE_LOCALE_STORAGE_KEY));
-  } catch {
-    saved = null;
-  }
+  const url = new URL(window.location.href);
+  const requested = normalizeYmBridgeLocale(url.searchParams.get("lang"));
+  const locale = ymBridgeLocaleFromPath(url.pathname);
 
-  let preference = requested || saved || "auto";
-  if (requested) {
-    try {
-      window.localStorage.setItem(YM_BRIDGE_LOCALE_STORAGE_KEY, requested);
-    } catch {
-      // The page still works when storage is unavailable.
+  // Old ?lang links remain usable. GitHub Pages has no query-aware HTTP redirects.
+  if (requested && ymBridgePageFromPath(url.pathname)) {
+    const target = localizeYmBridgeUrl(url.toString(), requested, url.origin);
+    if (target !== url.toString()) {
+      window.location.replace(target);
+      return;
     }
   }
 
-  const resolveLocale = () => preference === "auto"
-    ? detectYmBridgeLocale(navigator.languages || [navigator.language])
-    : preference;
-
-  applyYmBridgeLocale(resolveLocale(), preference);
+  // The URL determines the document language. Saved/browser preferences must not
+  // turn the same indexable URL into a different language or canonical.
+  applyYmBridgeLocale(locale, locale);
 
   document.querySelectorAll("[data-language-select]").forEach(select => {
     select.addEventListener("change", event => {
-      preference = event.currentTarget.value;
-      const url = new URL(window.location.href);
-
+      const preference = event.currentTarget.value;
+      const nextLocale = preference === "auto"
+        ? detectYmBridgeLocale(navigator.languages || [navigator.language])
+        : normalizeYmBridgeLocale(preference);
+      if (!nextLocale) return;
       try {
         if (preference === "auto") window.localStorage.removeItem(YM_BRIDGE_LOCALE_STORAGE_KEY);
-        else window.localStorage.setItem(YM_BRIDGE_LOCALE_STORAGE_KEY, preference);
+        else window.localStorage.setItem(YM_BRIDGE_LOCALE_STORAGE_KEY, nextLocale);
       } catch {
-        // The explicit URL still preserves a manual choice.
+        // Navigation still preserves the language when storage is unavailable.
       }
-
-      if (preference === "auto") url.searchParams.delete("lang");
-      else url.searchParams.set("lang", preference);
-      window.history.replaceState({}, "", url);
-      applyYmBridgeLocale(resolveLocale(), preference);
+      window.location.assign(localizeYmBridgeUrl(window.location.href, nextLocale, window.location.origin));
     });
   });
 }
@@ -2406,6 +2391,9 @@ if (typeof module !== "undefined" && module.exports) {
     detectLocale: detectYmBridgeLocale,
     getTranslation: getYmBridgeTranslation,
     publicPageUrl: buildYmBridgePublicPageUrl,
-    pagePaths: YM_BRIDGE_PAGE_PATHS
+    pagePaths: YM_BRIDGE_PAGE_PATHS,
+    localeFromPath: ymBridgeLocaleFromPath,
+    pageFromPath: ymBridgePageFromPath,
+    localizeUrl: localizeYmBridgeUrl
   };
 }

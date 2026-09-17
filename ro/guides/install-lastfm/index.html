@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="ro" dir="ltr" lang="ro" data-page="guide-install">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Instalează YM Bridge, conectează Last.fm, verifică scrobbling-ul direct și folosește autentificarea de rezervă dacă API-ul Last.fm nu este disponibil.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Conectează Yandex Music la Last.fm | YM Bridge">
+  <meta property="og:description" content="Instalează YM Bridge, conectează Last.fm, verifică scrobbling-ul direct și folosește autentificarea de rezervă dacă API-ul Last.fm nu este disponibil.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/ro/guides/install-lastfm/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-lastfm-connect.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <title>Conectează Yandex Music la Last.fm | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/ro/guides/install-lastfm/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/install-lastfm/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/install-lastfm/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/install-lastfm/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/install-lastfm/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/install-lastfm/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/install-lastfm/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/install-lastfm/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/install-lastfm/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/install-lastfm/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/install-lastfm/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/install-lastfm/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/install-lastfm/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/install-lastfm/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/install-lastfm/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/install-lastfm/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/install-lastfm/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Sari la conținut</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Navigare principală" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/ro/" data-locale-link="" aria-label="Pagina principală Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ro/#features" data-locale-link="" data-i18n="common.features">Funcții</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ro/#guides" data-locale-link="" data-i18n="common.guides">Ghiduri</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ro/support/" data-locale-link="" data-i18n="common.support">Asistență</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="Temă: Automat" title="Temă: Automat" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">Temă</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="Temă" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">Automat</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">Luminos</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">Întunecat</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">Limbă</span>
+        <select class="language-select" data-language-select="" aria-label="Limbă" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">Automat (browser)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option selected value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ro_guide-install" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">Magazin</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-install.eyebrow">Ghid de configurare</p>
+        <h1 data-i18n="guide-install.title">Conectează Yandex Music la Last.fm</h1>
+        <p class="guide-intro" data-i18n="guide-install.intro">YM Bridge citește piesa dintr-o filă Yandex Music deschisă și trimite ascultările eligibile către contul Last.fm. Extensia controlează în continuare livrarea.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ro_guide-install" target="_blank" rel="noreferrer" data-i18n="home.openStore">Deschide în Chrome Web Store</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ro/support/" data-locale-link="" data-i18n="common.support">Asistență</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="Pe această pagină" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">Pe această pagină</strong>
+          <a href="#before" data-i18n="guide-install.beforeTitle">Înainte de a începe</a>
+          <a href="#connect" data-i18n="guide-install.connectTitle">Conectează contul Last.fm</a>
+          <a href="#verify" data-i18n="guide-install.verifyTitle">Verifică livrarea</a>
+          <a href="#alternative" data-i18n="guide-install.alternativeTitle">Dacă autentificarea normală nu este disponibilă</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-lastfm-connect.png" alt="Setări YM Bridge cu conexiune Last.fm și diagnosticare" data-i18n-alt="guide-install.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="before">
+            <h2 data-i18n="guide-install.beforeTitle">Înainte de a începe</h2>
+            <div data-i18n-html="guide-install.beforeBody"><ul><li>Folosește Chrome și păstrează Yandex Music deschis într-o filă.</li><li>Instalează YM Bridge din Chrome Web Store.</li><li>Pregătește un cont Last.fm. Companion-ul Windows nu este necesar pentru scrobbling.</li></ul></div>
+          </section>
+
+          <section class="guide-section" id="connect">
+            <h2 data-i18n="guide-install.connectTitle">Conectează contul Last.fm</h2>
+            <div data-i18n-html="guide-install.connectBody"><ol><li>Deschide panoul lateral YM Bridge, extinde <strong>Tools</strong>, alege <strong>Settings</strong>, apoi <strong>Extension settings</strong>.</li><li>În <strong>Last.fm setup</strong>, apasă <strong>Connect Last.fm</strong>.</li><li>Aprobă accesul în Last.fm. Extensia salvează cheia de sesiune în spațiul de stocare Chrome.</li><li>Revino în panou și confirmă că Last.fm apare ca <strong>connected</strong>.</li></ol></div>
+          </section>
+
+          <section class="guide-section" id="verify">
+            <h2 data-i18n="guide-install.verifyTitle">Verifică livrarea</h2>
+            <div data-i18n-html="guide-install.verifyBody"><p>Pornește o piesă în Yandex Music și deschide panoul lateral. Trebuie să apară titlul, artistul și ținta livrării. Cu acces normal la rețea, ținta este <strong>direct to Last.fm</strong>.</p><p>O listă goală poate fi normală cât timp piesa curentă este procesată live. După trimiterea unei ascultări eligibile, <strong>Last delivery</strong> se actualizează și piesa apare în istoricul Last.fm.</p></div>
+          </section>
+
+          <section class="guide-section" id="alternative">
+            <h2 data-i18n="guide-install.alternativeTitle">Dacă autentificarea normală nu este disponibilă</h2>
+            <div data-i18n-html="guide-install.alternativeBody"><p>Încearcă mai întâi <strong>Connect Last.fm</strong>. Dacă API-ul direct de autentificare nu este accesibil, YM Bridge poate finaliza schimbul tokenului aprobat prin serviciul său.</p><p>Formularul alternativ cu nume sau e-mail și parolă rulează numai după apăsarea butonului. Datele sunt trimise o singură dată prin HTTPS pentru o cheie de sesiune Last.fm; parola este ștearsă din formular, nu este salvată de extensie și nu este jurnalizată intenționat de relay. Fluxul complet este în <a href="https://www.ym-bridge.mytunnel.us.com/ro/privacy-policy/" data-locale-link="">Politica de confidențialitate</a>.</p></div>
+          </section>
+
+          <section class="related-guides" aria-label="Ghiduri asociate" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">Ghiduri asociate</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/ro/guides/cloud-relay/" data-locale-link="">
+              <span data-i18n="home.guideRelayTitle">Folosește Cloud relay când Last.fm nu este disponibil direct</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/ro/guides/scrobble-queue/" data-locale-link="">
+              <span data-i18n="home.guideQueueTitle">Înțelege și reîncearcă lista de scrobble-uri</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/ro/" data-locale-link="" data-i18n="common.backProduct">Înapoi la pagina produsului</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ro/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">Politica de confidențialitate</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ro/#guides" data-locale-link="" data-i18n="common.guides">Ghiduri</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ro/privacy-policy/" data-locale-link="" data-i18n="common.privacy">Confidențialitate</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ro/support/" data-locale-link="" data-i18n="common.support">Asistență</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ro_guide-install" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">Proiect independent. Nu este afiliat cu Yandex sau Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -35,8 +35,11 @@
       tab.addEventListener("click", () => activate(showcase, tab.dataset.showcaseTab, false));
       tab.addEventListener("keydown", event => {
         let nextIndex = index;
-        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % tabs.length;
-        else if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        const horizontalStep = document.documentElement.dir === "rtl" ? -1 : 1;
+        if (event.key === "ArrowRight") nextIndex = (index + horizontalStep + tabs.length) % tabs.length;
+        else if (event.key === "ArrowLeft") nextIndex = (index - horizontalStep + tabs.length) % tabs.length;
+        else if (event.key === "ArrowDown") nextIndex = (index + 1) % tabs.length;
+        else if (event.key === "ArrowUp") nextIndex = (index - 1 + tabs.length) % tabs.length;
         else if (event.key === "Home") nextIndex = 0;
         else if (event.key === "End") nextIndex = tabs.length - 1;
         else return;

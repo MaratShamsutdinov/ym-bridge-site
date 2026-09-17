@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="ko" dir="ltr" lang="ko" data-page="guide-obs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YM Bridge에서 현재 Yandex Music 텍스트, JSON 및 커버를 로컬 폴더로 내보내 OBS Studio에서 사용하세요.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="OBS용 Yandex Music Now Playing | YM Bridge">
+  <meta property="og:description" content="YM Bridge에서 현재 Yandex Music 텍스트, JSON 및 커버를 로컬 폴더로 내보내 OBS Studio에서 사용하세요.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/ko/guides/obs-now-playing/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-obs-now-playing.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <script src="/site-showcase.js" defer></script>
+  <title>OBS용 Yandex Music Now Playing | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/ko/guides/obs-now-playing/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/obs-now-playing/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/obs-now-playing/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/obs-now-playing/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/obs-now-playing/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/obs-now-playing/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/obs-now-playing/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/obs-now-playing/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/obs-now-playing/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/obs-now-playing/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/obs-now-playing/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/obs-now-playing/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/obs-now-playing/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/obs-now-playing/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/obs-now-playing/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/obs-now-playing/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/obs-now-playing/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page feature-guide">
+  <a class="skip-link" href="#main" data-i18n="common.skip">콘텐츠로 이동</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="기본 탐색" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/ko/" data-locale-link="" aria-label="Yandex Music to Last.fm Bridge 홈" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/#features" data-locale-link="" data-i18n="common.features">기능</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/#guides" data-locale-link="" data-i18n="common.guides">가이드</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="테마: 자동" title="테마: 자동" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">테마</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="테마" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">자동</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">라이트</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">다크</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">언어</span>
+        <select class="language-select" data-language-select="" aria-label="언어" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">자동(브라우저)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option selected value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_guide-obs" target="_blank" rel="noreferrer" aria-label="Chrome 웹 스토어" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome 웹 스토어</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">스토어</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-obs.eyebrow">스트리밍 가이드</p>
+        <h1 data-i18n="guide-obs.title">OBS에 Yandex Music Now Playing 표시하기</h1>
+        <p class="guide-intro" data-i18n="guide-obs.intro">YM Bridge는 현재 트랙과 로컬 텍스트, JSON, 커버 파일을 동기화해 원격 오버레이 서비스 없이 OBS 장면에서 읽을 수 있게 합니다.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_guide-obs" target="_blank" rel="noreferrer" data-i18n="home.openStore">Chrome 웹 스토어에서 열기</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="이 페이지의 내용" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">이 페이지의 내용</strong>
+          <a href="#enable" data-i18n="guide-obs.enableTitle">폴더 접근 허용하기</a>
+          <a href="#files" data-i18n="guide-obs.filesTitle">YM Bridge가 기록하는 파일</a>
+          <a href="#obs" data-i18n="guide-obs.obsTitle">OBS에 출력 추가하기</a>
+          <a href="#health" data-i18n="guide-obs.healthTitle">내보내기 상태 확인하기</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-obs-now-playing.png" alt="YM Bridge Now Playing export settings for OBS" width="1280" height="800">
+          </figure>
+
+          <div class="obs-showcase layout-showcase reveal-on-scroll" data-showcase="" data-showcase-default="ready">
+            <div class="showcase-switcher" role="tablist" aria-label="Now Playing 내보내기 상태" data-i18n-aria="guide-obs.statesAria">
+              <button type="button" role="tab" aria-selected="false" data-showcase-tab="permission" data-i18n="guide-obs.permissionLabel">접근 전</button>
+              <button type="button" role="tab" aria-selected="true" data-showcase-tab="ready" data-i18n="guide-obs.readyLabel">준비됨</button>
+            </div>
+            <div class="obs-stage">
+              <section class="obs-state permission-state" data-showcase-panel="permission" hidden>
+                <div class="obs-status warning"><span aria-hidden="true"></span><strong>Now Playing files</strong><em>permission needed</em></div>
+                <p data-i18n="guide-obs.permissionDemo">확장 프로그램이 로컬 파일을 만들기 전에 Chrome에서 폴더를 명시적으로 선택해야 합니다.</p>
+                <span class="demo-command" data-i18n="guide-obs.grantLabel">폴더 접근 허용</span>
+              </section>
+              <section class="obs-state ready-state" data-showcase-panel="ready">
+                <div class="obs-status ok"><span aria-hidden="true"></span><strong>Now Playing files</strong><em>writing - just now</em></div>
+                <div class="obs-file-list" aria-label="생성된 파일" data-i18n-aria="guide-obs.filesAria">
+                  <div><span class="file-type text">TXT</span><code>now-playing.txt</code><small>Moonbeam - Look Around</small></div>
+                  <div><span class="file-type json">JSON</span><code>now-playing.json</code><small>{ artist, track, album, cover }</small></div>
+                  <div><span class="file-type image">PNG</span><code>now-playing-cover.png</code><small>Current cover artwork</small></div>
+                </div>
+                <div class="obs-actions"><span data-i18n="guide-obs.changeFolderLabel">폴더 변경</span><span data-i18n="guide-obs.disableLabel">Now Playing 비활성화</span></div>
+              </section>
+            </div>
+          </div>
+
+          <section class="guide-section" id="enable">
+            <h2 data-i18n="guide-obs.enableTitle">폴더 접근 허용하기</h2>
+            <div data-i18n-html="guide-obs.enableBody"><p>사이드 패널에서 <strong>Tools</strong>를 펼치고 <strong>Settings</strong>를 선택한 뒤 Now Playing files 영역의 <strong>Grant folder access</strong>를 누르세요. OBS가 계속 읽을 수 있는 전용 폴더를 선택합니다.</p><p>확장 프로그램이 사용자를 대신해 폴더를 고를 수 없기 때문에 Chrome이 직접 묻습니다. 권한은 로컬에 유지되며 <strong>Change folder</strong>로 바꾸거나 <strong>Disable Now Playing</strong>으로 제거할 수 있습니다.</p></div>
+          </section>
+
+          <section class="guide-section" id="files">
+            <h2 data-i18n="guide-obs.filesTitle">YM Bridge가 기록하는 파일</h2>
+            <div data-i18n-html="guide-obs.filesBody"><p><strong>now-playing.txt</strong>는 OBS 텍스트 소스용 아티스트와 트랙 한 줄을 담습니다. <strong>now-playing.json</strong>은 사용자 지정 오버레이용 구조화 메타데이터를 담습니다. <strong>now-playing-cover.png</strong>는 커버 내보내기가 켜져 있을 때 현재 커버를 따라갑니다.</p><p>재생이 바뀌면 같은 위치의 파일이 교체되며 모두 사용자 컴퓨터에 남습니다. Last.fm 전송과 선택적 데스크톱 companion은 별도 기능입니다.</p></div>
+          </section>
+
+          <section class="guide-section" id="obs">
+            <h2 data-i18n="guide-obs.obsTitle">OBS에 출력 추가하기</h2>
+            <div data-i18n-html="guide-obs.obsBody"><ol><li><strong>텍스트 (GDI+)</strong> 소스를 추가하고 파일에서 읽기를 켠 뒤 <strong>now-playing.txt</strong>를 선택합니다.</li><li><strong>now-playing-cover.png</strong>용 <strong>이미지</strong> 소스를 추가합니다.</li><li>두 소스의 모양과 위치를 장면에서 조정하세요. 확장 프로그램이 OBS를 제어하지 않아도 OBS가 이후 파일 변경을 감지합니다.</li></ol><p>오버레이에서 아티스트, 제목, 앨범 또는 커버를 따로 써야 하면 JSON 파일을 사용하세요.</p></div>
+          </section>
+
+          <section class="guide-section" id="health">
+            <h2 data-i18n="guide-obs.healthTitle">내보내기 상태 확인하기</h2>
+            <div data-i18n-html="guide-obs.healthBody"><p><strong>Control health</strong>를 열고 <strong>Now Playing files</strong> 행을 확인하세요. <strong>writing - just now</strong>는 최근 업데이트를 뜻하며 <strong>permission needed</strong>는 Chrome에서 폴더를 다시 허용해야 함을 뜻합니다.</p><p>트랙 데이터 자체가 오래된 경우 <strong>Repair controls</strong>를 실행하고 Yandex Music 탭을 새로고침하세요. 폴더 권한으로 비활성 페이지 연결을 복구할 수는 없습니다.</p></div>
+          </section>
+
+          <section class="related-guides" aria-label="관련 가이드" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">관련 가이드</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/player-layouts/" data-locale-link="">
+              <span data-i18n="home.guideLayoutsTitle">미니 플레이어와 사이드 패널 레이아웃 살펴보기</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/keyboard-shortcuts/" data-locale-link="">
+              <span data-i18n="home.guideShortcutsTitle">키보드 단축키로 재생 제어하기</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/ko/" data-locale-link="" data-i18n="common.backProduct">제품 페이지로 돌아가기</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ko/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">개인정보처리방침</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/#guides" data-locale-link="" data-i18n="common.guides">가이드</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/privacy-policy/" data-locale-link="" data-i18n="common.privacy">개인정보 보호</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_guide-obs" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome 웹 스토어</a>
+      </div>
+      <p data-i18n="common.disclaimer">독립 프로젝트이며 Yandex 또는 Last.fm과 제휴하지 않습니다.</p>
+    </div>
+  </footer>
+</body>
+</html>

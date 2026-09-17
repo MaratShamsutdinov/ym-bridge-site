@@ -26,7 +26,8 @@
   closeButton.className = "image-lightbox-close";
   closeButton.type = "button";
   closeButton.dataset.imageLightboxClose = "";
-  closeButton.setAttribute("aria-label", "Close image preview");
+  closeButton.setAttribute("aria-label", document.documentElement.lang === "he"
+    ? "סגירת תצוגת התמונה" : "Close image preview");
   closeButton.textContent = "\u00d7";
 
   overlay.append(preview, closeButton);
@@ -35,6 +36,7 @@
   let activeTrigger = null;
   let closeTimer = 0;
   let previousOverflow = "";
+  let previousPaddingLeft = "";
   let previousPaddingRight = "";
 
   function finishClose() {
@@ -44,6 +46,7 @@
     preview.removeAttribute("src");
     document.body.classList.remove("image-lightbox-open");
     document.body.style.overflow = previousOverflow;
+    document.body.style.paddingLeft = previousPaddingLeft;
     document.body.style.paddingRight = previousPaddingRight;
     activeTrigger?.setAttribute("aria-expanded", "false");
     activeTrigger?.focus({ preventScroll: true });
@@ -62,10 +65,17 @@
     closeTimer = 0;
     activeTrigger = trigger;
     previousOverflow = document.body.style.overflow;
+    previousPaddingLeft = document.body.style.paddingLeft;
     previousPaddingRight = document.body.style.paddingRight;
 
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
+    if (scrollbarWidth > 0) {
+      const rootBorder = parseFloat(getComputedStyle(document.documentElement).borderLeftWidth) || 0;
+      const scrollbarOnLeft = document.documentElement.clientLeft > rootBorder;
+      const paddingSide = scrollbarOnLeft ? "paddingLeft" : "paddingRight";
+      const existingPadding = parseFloat(getComputedStyle(document.body)[paddingSide]) || 0;
+      document.body.style[paddingSide] = `${existingPadding + scrollbarWidth}px`;
+    }
     document.body.style.overflow = "hidden";
     document.body.classList.add("image-lightbox-open");
 

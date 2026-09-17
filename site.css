@@ -148,7 +148,7 @@ a:focus-visible {
   position: fixed;
   z-index: 100;
   top: 10px;
-  left: 10px;
+  inset-inline-start: 10px;
   padding: 8px 12px;
   background: var(--text);
   color: var(--page);
@@ -181,7 +181,7 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 11px;
-  margin-right: auto;
+  margin-inline-end: auto;
   color: var(--text);
   font-size: 17px;
   font-weight: 700;
@@ -241,7 +241,7 @@ a:focus-visible {
   position: absolute;
   z-index: 1;
   top: 50%;
-  left: 11px;
+  inset-inline-start: 11px;
   width: 14px;
   height: 14px;
   border: 1.5px solid var(--quiet);
@@ -255,7 +255,7 @@ a:focus-visible {
   position: absolute;
   z-index: 1;
   top: 50%;
-  left: 17px;
+  inset-inline-start: 17px;
   width: 2px;
   height: 14px;
   border-inline: 1px solid var(--quiet);
@@ -268,7 +268,8 @@ a:focus-visible {
 .language-select {
   width: 156px;
   height: 38px;
-  padding: 0 30px 0 32px;
+  padding-block: 0;
+  padding-inline: 32px 30px;
   border: 1px solid var(--line);
   border-radius: 7px;
   appearance: none;
@@ -352,7 +353,7 @@ a:focus-visible {
   position: absolute;
   z-index: 30;
   top: calc(100% + 8px);
-  right: 0;
+  inset-inline-end: 0;
   width: 164px;
   padding: 5px;
   border: 1px solid var(--line);
@@ -365,7 +366,8 @@ a:focus-visible {
   position: relative;
   width: 100%;
   min-height: 36px;
-  padding: 7px 30px 7px 9px;
+  padding-block: 7px;
+  padding-inline: 9px 30px;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -375,7 +377,7 @@ a:focus-visible {
   color: var(--muted);
   font: inherit;
   font-size: 13px;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
 }
 
@@ -388,7 +390,7 @@ a:focus-visible {
 .theme-option[aria-checked="true"]::after {
   position: absolute;
   top: 11px;
-  right: 12px;
+  inset-inline-end: 12px;
   width: 5px;
   height: 9px;
   border-right: 2px solid var(--green);
@@ -429,7 +431,8 @@ a:focus-visible {
 
 .hero::after {
   position: absolute;
-  inset: 0 50% 0 0;
+  inset-block: 0;
+  inset-inline: 0 50%;
   background: var(--hero-overlay);
   content: "";
 }
@@ -437,7 +440,7 @@ a:focus-visible {
 .hero-art {
   position: absolute;
   top: 30px;
-  right: max(7vw, calc((100vw - var(--content)) / 2));
+  inset-inline-end: max(7vw, calc((100vw - var(--content)) / 2));
   width: 405px;
   height: 746px;
   background-image: url("assets/hero-player.png");
@@ -545,11 +548,11 @@ h1 {
 .signal-inner div {
   min-width: 0;
   padding: 25px 22px;
-  border-left: 1px solid var(--line);
+  border-inline-start: 1px solid var(--line);
 }
 
 .signal-inner div:last-child {
-  border-right: 1px solid var(--line);
+  border-inline-end: 1px solid var(--line);
 }
 
 .signal-inner strong,
@@ -672,7 +675,8 @@ h2 {
 
 .feature-list li {
   position: relative;
-  padding: 11px 0 11px 24px;
+  padding-block: 11px;
+  padding-inline: 24px 0;
   border-bottom: 1px solid var(--line);
   color: var(--copy-strong);
   font-size: 14px;
@@ -681,7 +685,7 @@ h2 {
 .feature-list li::before {
   position: absolute;
   top: 18px;
-  left: 2px;
+  inset-inline-start: 2px;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -1020,7 +1024,7 @@ footer {
 
 .document-card ul {
   margin: 0 0 20px;
-  padding-left: 22px;
+  padding-inline-start: 22px;
 }
 
 .document-card li {
@@ -1059,7 +1063,7 @@ footer {
 .translation-note {
   margin: 26px 0 !important;
   padding: 14px 16px;
-  border-left: 3px solid var(--gold);
+  border-inline-start: 3px solid var(--gold);
   background: var(--notice-bg);
   color: var(--notice-text) !important;
   font-size: 13px;
@@ -1256,7 +1260,7 @@ footer {
 .image-lightbox-close {
   position: fixed;
   top: max(12px, env(safe-area-inset-top));
-  right: max(12px, env(safe-area-inset-right));
+  inset-inline-end: max(12px, env(safe-area-inset-right));
   z-index: 1;
   display: grid;
   width: 44px;
@@ -1313,12 +1317,12 @@ footer {
 .guide-section ul,
 .guide-section ol {
   margin: 0;
-  padding-left: 23px;
+  padding-inline-start: 23px;
 }
 
 .guide-section li {
   margin: 10px 0;
-  padding-left: 3px;
+  padding-inline-start: 3px;
 }
 
 .guide-section strong {
@@ -1689,13 +1693,78 @@ footer {
   font-size: 12px;
 }
 
+/* Text layout follows the selected language. Branding, screenshots and code
+   retain their original direction; their surrounding cards can still move. */
+.brand,
+.footer-brand {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.footer-brand {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.showcase-stage,
+.image-lightbox-preview,
+.shortcut-row,
+code,
+kbd,
+pre,
+.file-type,
+.obs-file-list small {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Labels around the physical shortcut sequence remain ordinary UI text. */
+html[dir="rtl"] .shortcut-row > span,
+html[dir="rtl"] .shortcut-row em {
+  direction: rtl;
+  text-align: start;
+}
+
+html[dir="rtl"] .brand {
+  /* The wordmark itself remains LTR, so its margin follows that local axis. */
+  margin-inline: auto 0;
+}
+
+html[dir="rtl"] .language-select {
+  background-position: 9px 16px, 14px 16px;
+}
+
+html[dir="rtl"] .guide-index-arrow,
+html[dir="rtl"] .related-guides > a span:last-child {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .guide-index-list > a:hover .guide-index-arrow {
+  transform: translateX(-4px) scaleX(-1);
+}
+
+html[dir="rtl"] .image-lightbox-close {
+  inset-inline-end: max(12px, env(safe-area-inset-left));
+}
+
+html:lang(he) .eyebrow,
+html:lang(he) .guide-toc strong,
+html:lang(he) .companion-recommended {
+  text-transform: none;
+}
+
+html:lang(he) h1 {
+  line-height: 1.14;
+}
+
 @media (max-width: 960px) {
   .hero::after {
-    inset: 0 38% 0 0;
+    inset-block: 0;
+    inset-inline: 0 38%;
   }
 
   .hero-art {
-    right: -50px;
+    inset-inline-end: -50px;
     opacity: 0.72;
   }
 
@@ -1779,7 +1848,7 @@ footer {
 
   .hero-art {
     top: 120px;
-    right: -120px;
+    inset-inline-end: -120px;
     width: 330px;
     height: 608px;
     opacity: 0.32;
@@ -1815,7 +1884,7 @@ footer {
   }
 
   .signal-inner div:nth-child(2) {
-    border-right: 1px solid var(--line);
+    border-inline-end: 1px solid var(--line);
   }
 
   .signal-inner div:nth-child(n + 3) {
@@ -1940,8 +2009,8 @@ footer {
   }
 
   .theme-menu {
-    right: auto;
-    left: 0;
+    inset-inline-end: auto;
+    inset-inline-start: 0;
   }
 
   .language-select {

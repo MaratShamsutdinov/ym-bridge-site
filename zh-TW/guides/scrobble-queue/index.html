@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="zh-TW" dir="ltr" lang="zh-TW" data-page="guide-queue">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="了解 YM Bridge 佇列狀態，重試失敗的 Last.fm 傳送，並診斷遺失的曲目中繼資料或播放控制。">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="修復 Last.fm 播放記錄並重試佇列 | YM Bridge">
+  <meta property="og:description" content="了解 YM Bridge 佇列狀態，重試失敗的 Last.fm 傳送，並診斷遺失的曲目中繼資料或播放控制。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/scrobble-queue/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-scrobble-queue.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <title>修復 Last.fm 播放記錄並重試佇列 | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/scrobble-queue/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/scrobble-queue/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/scrobble-queue/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/scrobble-queue/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/scrobble-queue/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/scrobble-queue/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/scrobble-queue/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/scrobble-queue/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/scrobble-queue/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/scrobble-queue/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/scrobble-queue/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/scrobble-queue/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/scrobble-queue/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/scrobble-queue/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/scrobble-queue/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/scrobble-queue/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/scrobble-queue/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">跳至內容</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="主要導覽" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/" data-locale-link="" aria-label="Yandex Music to Last.fm Bridge 首頁" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/#features" data-locale-link="" data-i18n="common.features">功能</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/#guides" data-locale-link="" data-i18n="common.guides">指南</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/support/" data-locale-link="" data-i18n="common.support">支援</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="主題: 自動" title="主題: 自動" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">主題</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="主題" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">自動</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">淺色</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">深色</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">語言</span>
+        <select class="language-select" data-language-select="" aria-label="語言" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">自動（瀏覽器）</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option selected value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=zh-TW_guide-queue" target="_blank" rel="noreferrer" aria-label="Chrome 線上應用程式商店" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome 線上應用程式商店</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">商店</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-queue.eyebrow">疑難排解指南</p>
+        <h1 data-i18n="guide-queue.title">了解並重試播放記錄佇列</h1>
+        <p class="guide-intro" data-i18n="guide-queue.intro">佇列會顯示延遲的 Last.fm 傳送，而不是悄悄遺失曲目。透過狀態可區分目前播放和真正需要處理的項目。</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=zh-TW_guide-queue" target="_blank" rel="noreferrer" data-i18n="home.openStore">在 Chrome 線上應用程式商店開啟</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/support/" data-locale-link="" data-i18n="common.support">支援</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="本頁內容" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">本頁內容</strong>
+          <a href="#normal" data-i18n="guide-queue.normalTitle">佇列為空何時屬於正常情況</a>
+          <a href="#states" data-i18n="guide-queue.statesTitle">識別佇列狀態</a>
+          <a href="#retry" data-i18n="guide-queue.retryTitle">安全重試</a>
+          <a href="#diagnose" data-i18n="guide-queue.diagnoseTitle">診斷傳送路徑</a>
+          <a href="#controls" data-i18n="guide-queue.controlsTitle">修復過期的曲目資料或控制</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-scrobble-queue.png" alt="包含播放記錄狀態、佇列和工具的 YM Bridge 側邊欄" data-i18n-alt="guide-queue.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="normal">
+            <h2 data-i18n="guide-queue.normalTitle">佇列為空何時屬於正常情況</h2>
+            <div data-i18n-html="guide-queue.normalBody"><p>目前曲目會即時處理，不必一直留在可見佇列中。因此 <strong>Queue is empty. Current playback is being handled live.</strong> 表示正常狀態。</p><p>請透過面板的 <strong>Last delivery</strong> 和 Last.fm 最近曲目確認已完成的傳送。目前播放的曲目不會立即顯示為已完成的播放記錄。</p></div>
+          </section>
+
+          <section class="guide-section" id="states">
+            <h2 data-i18n="guide-queue.statesTitle">識別佇列狀態</h2>
+            <div data-i18n-html="guide-queue.statesBody"><ul><li><strong>Pending</strong>：曲目正在等待符合條件或下一次傳送。</li><li><strong>Relay</strong>：無法直接傳送，項目正在等待備援批次。</li><li><strong>Retry</strong>：上一次嘗試失敗，擴充功能已排定下一次嘗試。</li><li><strong>Failed</strong>：需要手動重試，或可使用 <strong>Clear failed</strong> 移除。</li></ul></div>
+          </section>
+
+          <section class="guide-section" id="retry">
+            <h2 data-i18n="guide-queue.retryTitle">安全重試</h2>
+            <div data-i18n-html="guide-queue.retryBody"><ol><li>開啟 <strong>View queue</strong>。</li><li>按一次 <strong>Retry</strong>。擴充功能會立即執行符合條件的傳送並更新狀態。</li><li>再次按下前請等待結果。如果網路路徑仍無法使用，重複按下也無法修復。</li><li>僅在確定要捨棄失敗項目時使用 <strong>Clear failed</strong>。它不會重新連接 Last.fm。</li></ol></div>
+          </section>
+
+          <section class="guide-section" id="diagnose">
+            <h2 data-i18n="guide-queue.diagnoseTitle">診斷傳送路徑</h2>
+            <div data-i18n-html="guide-queue.diagnoseBody"><p>檢查面板頂端的 <strong>Last.fm</strong>、<strong>Yandex Music</strong> 和 <strong>Scrobble queue</strong>，再查看目前曲目下方的 <strong>Delivery target</strong>。</p><ul><li><strong>direct to Last.fm</strong> 表示瀏覽器直連路徑有效。</li><li><strong>Cloud relay</strong> 表示備援傳送或批次處理有效。</li><li><strong>connected</strong> 表示已儲存 Last.fm 工作階段。目前網路仍可能封鎖直接取得個人資料或統計資料。</li></ul></div>
+          </section>
+
+          <section class="guide-section" id="controls">
+            <h2 data-i18n="guide-queue.controlsTitle">修復過期的曲目資料或控制</h2>
+            <div data-i18n-html="guide-queue.controlsBody"><p>如果曲名、封面或播放狀態不再跟隨 Yandex Music，問題發生在 Last.fm 之前。開啟 <strong>Tools</strong>，選擇 <strong>Settings</strong>，執行 <strong>Control health</strong>，再使用 <strong>Repair controls</strong>。如果仍回報舊連線，請重新載入 Yandex Music 分頁。</p><p>尋求協助時，請使用 <strong>Copy diagnostics</strong> 並移除不想分享的資訊。切勿公開 Last.fm 密碼或工作階段金鑰。</p></div>
+          </section>
+
+          <section class="related-guides" aria-label="相關指南" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">相關指南</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/install-lastfm/" data-locale-link="">
+              <span data-i18n="home.guideInstallTitle">安裝並連接 Last.fm</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/cloud-relay/" data-locale-link="">
+              <span data-i18n="home.guideRelayTitle">無法直連 Last.fm 時使用 Cloud relay</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/" data-locale-link="" data-i18n="common.backProduct">返回產品頁面</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">隱私權政策</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/#guides" data-locale-link="" data-i18n="common.guides">指南</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/privacy-policy/" data-locale-link="" data-i18n="common.privacy">隱私權</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/zh-TW/support/" data-locale-link="" data-i18n="common.support">支援</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=zh-TW_guide-queue" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome 線上應用程式商店</a>
+      </div>
+      <p data-i18n="common.disclaimer">獨立專案，與 Yandex 或 Last.fm 無隸屬關係。</p>
+    </div>
+  </footer>
+</body>
+</html>

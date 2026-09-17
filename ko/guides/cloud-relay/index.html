@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="ko" dir="ltr" lang="ko" data-page="guide-relay">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YM Bridge는 먼저 Last.fm 직접 전송을 시도하고 직접 스크로블 전송을 사용할 수 없을 때만 선택적 Cloud relay를 사용합니다.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Yandex Music용 Last.fm Cloud relay | YM Bridge">
+  <meta property="og:description" content="YM Bridge는 먼저 Last.fm 직접 전송을 시도하고 직접 스크로블 전송을 사용할 수 없을 때만 선택적 Cloud relay를 사용합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/ko/guides/cloud-relay/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-cloud-relay.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <title>Yandex Music용 Last.fm Cloud relay | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/ko/guides/cloud-relay/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/cloud-relay/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/cloud-relay/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/cloud-relay/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/cloud-relay/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/cloud-relay/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/cloud-relay/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/cloud-relay/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/cloud-relay/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/cloud-relay/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/cloud-relay/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/cloud-relay/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/cloud-relay/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/cloud-relay/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/cloud-relay/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/cloud-relay/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/cloud-relay/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">콘텐츠로 이동</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="기본 탐색" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/ko/" data-locale-link="" aria-label="Yandex Music to Last.fm Bridge 홈" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/#features" data-locale-link="" data-i18n="common.features">기능</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/#guides" data-locale-link="" data-i18n="common.guides">가이드</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="테마: 자동" title="테마: 자동" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">테마</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="테마" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">자동</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">라이트</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">다크</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">언어</span>
+        <select class="language-select" data-language-select="" aria-label="언어" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">자동(브라우저)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option selected value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_guide-relay" target="_blank" rel="noreferrer" aria-label="Chrome 웹 스토어" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome 웹 스토어</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">스토어</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-relay.eyebrow">전송 가이드</p>
+        <h1 data-i18n="guide-relay.title">Last.fm 직접 연결이 불가능할 때 스크로블링</h1>
+        <p class="guide-intro" data-i18n="guide-relay.intro">Cloud relay는 Last.fm API에 직접 연결할 수 없는 네트워크를 위한 선택적 대체 경로입니다. 이를 켜도 일반 직접 전송은 대체되지 않습니다.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_guide-relay" target="_blank" rel="noreferrer" data-i18n="home.openStore">Chrome 웹 스토어에서 열기</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ko/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">개인정보처리방침</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="이 페이지의 내용" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">이 페이지의 내용</strong>
+          <a href="#direct-first" data-i18n="guide-relay.directTitle">직접 전송이 항상 우선</a>
+          <a href="#enable" data-i18n="guide-relay.enableTitle">대체 경로 활성화</a>
+          <a href="#data" data-i18n="guide-relay.dataTitle">relay가 받는 데이터</a>
+          <a href="#batching" data-i18n="guide-relay.batchingTitle">일괄 처리 및 자동 복구</a>
+          <a href="#check" data-i18n="guide-relay.checkTitle">작동 확인</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-cloud-relay.png" alt="YM Bridge Cloud relay 및 Last.fm 설정" data-i18n-alt="guide-relay.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="direct-first">
+            <h2 data-i18n="guide-relay.directTitle">직접 전송이 항상 우선</h2>
+            <div data-i18n-html="guide-relay.directBody"><p><strong>Use Cloud relay for scrobbles when direct delivery is unavailable</strong> 설정은 이름 그대로 동작합니다. YM Bridge는 먼저 Chrome에서 Last.fm API로 직접 연결합니다. relay는 대체 가능한 직접 네트워크 오류가 발생한 뒤에만 사용됩니다.</p><p>직접 연결이 정상이면 패널에 <strong>Delivery target: direct to Last.fm</strong>이 표시되고 해당 스크로블에는 relay가 사용되지 않습니다.</p></div>
+          </section>
+
+          <section class="guide-section" id="enable">
+            <h2 data-i18n="guide-relay.enableTitle">대체 경로 활성화</h2>
+            <div data-i18n-html="guide-relay.enableBody"><ol><li><strong>Extension settings</strong>를 열고 <strong>Cloud relay</strong>를 찾으세요.</li><li><strong>Use Cloud relay for scrobbles when direct delivery is unavailable</strong>를 켜세요.</li><li>처음 사용할 때 데이터 안내를 읽고 <strong>Accept and keep relay fallback</strong>을 누르세요. 동의하기 전에는 대체 전송이 시작되지 않습니다.</li></ol><p>직접 전송만 요구하려면 언제든 옵션을 끌 수 있습니다.</p></div>
+          </section>
+
+          <section class="guide-section" id="data">
+            <h2 data-i18n="guide-relay.dataTitle">relay가 받는 데이터</h2>
+            <div data-i18n-html="guide-relay.dataBody"><p>직접 전송을 사용할 수 없을 때만 완료된 곡의 메타데이터와 Last.fm 세션 키가 HTTPS로 개발자가 운영하는 Cloudflare Worker에 전송되고 Last.fm으로 전달됩니다.</p><p>relay는 청취 기록, 세션 키 또는 요청 본문을 의도적으로 보관하지 않습니다. 인프라 제공자인 Cloudflare는 IP 주소와 기술적 요청 메타데이터를 처리할 수 있습니다. 자세한 내용은 <a href="https://www.ym-bridge.mytunnel.us.com/ko/privacy-policy/" data-locale-link="">개인정보처리방침</a>에 있습니다.</p></div>
+          </section>
+
+          <section class="guide-section" id="batching">
+            <h2 data-i18n="guide-relay.batchingTitle">일괄 처리 및 자동 복구</h2>
+            <div data-i18n-html="guide-relay.batchingBody"><p>대체 스크로블은 대기열에 들어가며 일반적으로 10곡 또는 30분 후 한 번에 전송됩니다. Worker 트래픽을 줄이기 위한 방식입니다. 패널은 항목을 <strong>Relay</strong>로 표시하고 대기열에 보여 줍니다.</p><p>YM Bridge는 Last.fm 직접 연결을 주기적으로 확인합니다. 연결이 복구되면 relay 설정을 지우지 않아도 새 전송이 자동으로 직접 경로로 돌아갑니다.</p></div>
+          </section>
+
+          <section class="guide-section" id="check">
+            <h2 data-i18n="guide-relay.checkTitle">작동 확인</h2>
+            <div data-i18n-html="guide-relay.checkBody"><ul><li>사이드 패널을 열고 <strong>Delivery target</strong>을 확인하세요.</li><li><strong>View queue</strong>에서 Relay, Retry 또는 Failed 상태를 확인하세요.</li><li>예정 시간이 지나도 묶음이 남아 있으면 <strong>Retry</strong>를 한 번 누르고 갱신된 오류를 확인하세요.</li><li>Last.fm의 <strong>connected</strong> 표시는 저장된 세션을 확인할 뿐, 현재 네트워크에서 직접 API에 연결된다는 뜻은 아닙니다.</li></ul></div>
+          </section>
+
+          <section class="related-guides" aria-label="관련 가이드" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">관련 가이드</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/install-lastfm/" data-locale-link="">
+              <span data-i18n="home.guideInstallTitle">Last.fm 설치 및 연결</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/ko/guides/scrobble-queue/" data-locale-link="">
+              <span data-i18n="home.guideQueueTitle">스크로블 대기열 이해 및 재시도</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/ko/" data-locale-link="" data-i18n="common.backProduct">제품 페이지로 돌아가기</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/#guides" data-locale-link="" data-i18n="common.guides">가이드</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/privacy-policy/" data-locale-link="" data-i18n="common.privacy">개인정보 보호</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ko/support/" data-locale-link="" data-i18n="common.support">지원</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ko_guide-relay" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome 웹 스토어</a>
+      </div>
+      <p data-i18n="common.disclaimer">독립 프로젝트이며 Yandex 또는 Last.fm과 제휴하지 않습니다.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="pt-BR" dir="ltr" lang="pt-BR" data-page="guide-obs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exporte do YM Bridge texto, JSON e capa da faixa atual do Yandex Music para uma pasta local usada pelo OBS Studio.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Yandex Music Now Playing para OBS | YM Bridge">
+  <meta property="og:description" content="Exporte do YM Bridge texto, JSON e capa da faixa atual do Yandex Music para uma pasta local usada pelo OBS Studio.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/obs-now-playing/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-obs-now-playing.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <script src="/site-showcase.js" defer></script>
+  <title>Yandex Music Now Playing para OBS | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/obs-now-playing/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/obs-now-playing/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/obs-now-playing/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/obs-now-playing/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/obs-now-playing/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/obs-now-playing/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/obs-now-playing/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/obs-now-playing/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/obs-now-playing/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/obs-now-playing/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/obs-now-playing/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/obs-now-playing/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/obs-now-playing/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/obs-now-playing/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/obs-now-playing/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/obs-now-playing/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/obs-now-playing/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page feature-guide">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Navegação principal" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/" data-locale-link="" aria-label="Página inicial do Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/#features" data-locale-link="" data-i18n="common.features">Recursos</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/#guides" data-locale-link="" data-i18n="common.guides">Guias</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/support/" data-locale-link="" data-i18n="common.support">Suporte</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="Tema: Automático" title="Tema: Automático" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">Tema</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="Tema" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">Automático</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">Claro</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">Escuro</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">Idioma</span>
+        <select class="language-select" data-language-select="" aria-label="Idioma" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">Automático (navegador)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option selected value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=pt-BR_guide-obs" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">Loja</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-obs.eyebrow">Guia para streaming</p>
+        <h1 data-i18n="guide-obs.title">Mostre o Now Playing do Yandex Music no OBS</h1>
+        <p class="guide-intro" data-i18n="guide-obs.intro">O YM Bridge mantém arquivos locais de texto, JSON e capa sincronizados com a faixa atual para que uma cena do OBS possa lê-los sem um serviço remoto de overlay.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=pt-BR_guide-obs" target="_blank" rel="noreferrer" data-i18n="home.openStore">Abrir na Chrome Web Store</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/support/" data-locale-link="" data-i18n="common.support">Suporte</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="Nesta página" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">Nesta página</strong>
+          <a href="#enable" data-i18n="guide-obs.enableTitle">Conceda acesso à pasta</a>
+          <a href="#files" data-i18n="guide-obs.filesTitle">Arquivos gravados pelo YM Bridge</a>
+          <a href="#obs" data-i18n="guide-obs.obsTitle">Adicione a saída ao OBS</a>
+          <a href="#health" data-i18n="guide-obs.healthTitle">Verifique o estado da exportação</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-obs-now-playing.png" alt="YM Bridge Now Playing export settings for OBS" width="1280" height="800">
+          </figure>
+
+          <div class="obs-showcase layout-showcase reveal-on-scroll" data-showcase="" data-showcase-default="ready">
+            <div class="showcase-switcher" role="tablist" aria-label="Estados da exportação Now Playing" data-i18n-aria="guide-obs.statesAria">
+              <button type="button" role="tab" aria-selected="false" data-showcase-tab="permission" data-i18n="guide-obs.permissionLabel">Antes da permissão</button>
+              <button type="button" role="tab" aria-selected="true" data-showcase-tab="ready" data-i18n="guide-obs.readyLabel">Pronto</button>
+            </div>
+            <div class="obs-stage">
+              <section class="obs-state permission-state" data-showcase-panel="permission" hidden>
+                <div class="obs-status warning"><span aria-hidden="true"></span><strong>Now Playing files</strong><em>permission needed</em></div>
+                <p data-i18n="guide-obs.permissionDemo">O Chrome exige a escolha explícita de uma pasta antes que a extensão crie arquivos locais.</p>
+                <span class="demo-command" data-i18n="guide-obs.grantLabel">Conceder acesso à pasta</span>
+              </section>
+              <section class="obs-state ready-state" data-showcase-panel="ready">
+                <div class="obs-status ok"><span aria-hidden="true"></span><strong>Now Playing files</strong><em>writing - just now</em></div>
+                <div class="obs-file-list" aria-label="Arquivos gerados" data-i18n-aria="guide-obs.filesAria">
+                  <div><span class="file-type text">TXT</span><code>now-playing.txt</code><small>Moonbeam - Look Around</small></div>
+                  <div><span class="file-type json">JSON</span><code>now-playing.json</code><small>{ artist, track, album, cover }</small></div>
+                  <div><span class="file-type image">PNG</span><code>now-playing-cover.png</code><small>Current cover artwork</small></div>
+                </div>
+                <div class="obs-actions"><span data-i18n="guide-obs.changeFolderLabel">Alterar pasta</span><span data-i18n="guide-obs.disableLabel">Desativar Now Playing</span></div>
+              </section>
+            </div>
+          </div>
+
+          <section class="guide-section" id="enable">
+            <h2 data-i18n="guide-obs.enableTitle">Conceda acesso à pasta</h2>
+            <div data-i18n-html="guide-obs.enableBody"><p>No painel lateral, abra <strong>Tools</strong>, selecione <strong>Settings</strong> e pressione <strong>Grant folder access</strong> na seção Now Playing files. Escolha uma pasta dedicada que o OBS possa ler continuamente.</p><p>O Chrome pergunta diretamente porque a extensão não pode escolher uma pasta por você. A permissão permanece local e pode ser alterada com <strong>Change folder</strong> ou removida com <strong>Disable Now Playing</strong>.</p></div>
+          </section>
+
+          <section class="guide-section" id="files">
+            <h2 data-i18n="guide-obs.filesTitle">Arquivos gravados pelo YM Bridge</h2>
+            <div data-i18n-html="guide-obs.filesBody"><p><strong>now-playing.txt</strong> contém uma linha simples com artista e faixa para uma fonte de texto do OBS. <strong>now-playing.json</strong> oferece metadados estruturados para overlays personalizados. <strong>now-playing-cover.png</strong> acompanha a capa atual quando a exportação de capa está ativa.</p><p>Quando a faixa muda, os arquivos são substituídos no mesmo local e permanecem no seu computador. A entrega ao Last.fm e o desktop companion opcional são recursos separados.</p></div>
+          </section>
+
+          <section class="guide-section" id="obs">
+            <h2 data-i18n="guide-obs.obsTitle">Adicione a saída ao OBS</h2>
+            <div data-i18n-html="guide-obs.obsBody"><ol><li>Adicione uma fonte <strong>Text (GDI+)</strong>, ative a leitura de arquivo e selecione <strong>now-playing.txt</strong>.</li><li>Adicione uma fonte <strong>Image</strong> para <strong>now-playing-cover.png</strong>.</li><li>Ajuste e posicione as duas fontes na cena. O OBS detecta as próximas alterações dos arquivos sem que a extensão precise controlar o OBS.</li></ol><p>Use o arquivo JSON se o overlay precisar de artista, título, álbum ou capa em campos separados.</p></div>
+          </section>
+
+          <section class="guide-section" id="health">
+            <h2 data-i18n="guide-obs.healthTitle">Verifique o estado da exportação</h2>
+            <div data-i18n-html="guide-obs.healthBody"><p>Abra <strong>Control health</strong> e leia a linha <strong>Now Playing files</strong>. <strong>writing - just now</strong> confirma uma atualização recente; <strong>permission needed</strong> indica que o Chrome precisa autorizar a pasta novamente.</p><p>Se os próprios dados da faixa estiverem desatualizados, execute <strong>Repair controls</strong> e recarregue a guia do Yandex Music. A permissão de pasta não corrige uma conexão inativa com a página.</p></div>
+          </section>
+
+          <section class="related-guides" aria-label="Guias relacionados" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">Guias relacionados</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/player-layouts/" data-locale-link="">
+              <span data-i18n="home.guideLayoutsTitle">Conheça os layouts do miniplayer e do painel lateral</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/keyboard-shortcuts/" data-locale-link="">
+              <span data-i18n="home.guideShortcutsTitle">Controle a reprodução com atalhos de teclado</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/" data-locale-link="" data-i18n="common.backProduct">Voltar à página do produto</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">Política de Privacidade</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/#guides" data-locale-link="" data-i18n="common.guides">Guias</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/privacy-policy/" data-locale-link="" data-i18n="common.privacy">Privacidade</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/pt-BR/support/" data-locale-link="" data-i18n="common.support">Suporte</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=pt-BR_guide-obs" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">Projeto independente. Não é afiliado ao Yandex nem ao Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>

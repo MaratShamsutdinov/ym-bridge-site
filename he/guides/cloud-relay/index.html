@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="he" dir="rtl" lang="he" data-page="guide-relay">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="למדו כיצד YM Bridge מנסה תחילה לפנות ישירות ל־Last.fm ומשתמש ב־Cloud relay האופציונלי רק כאשר שליחת דיווחי ההאזנה הישירה אינה זמינה.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="גיבוי באמצעות Cloud relay ל־Last.fm עבור Yandex Music | YM Bridge">
+  <meta property="og:description" content="למדו כיצד YM Bridge מנסה תחילה לפנות ישירות ל־Last.fm ומשתמש ב־Cloud relay האופציונלי רק כאשר שליחת דיווחי ההאזנה הישירה אינה זמינה.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/he/guides/cloud-relay/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-cloud-relay.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <title>גיבוי באמצעות Cloud relay ל־Last.fm עבור Yandex Music | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/he/guides/cloud-relay/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/cloud-relay/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/cloud-relay/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/cloud-relay/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/cloud-relay/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/cloud-relay/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/cloud-relay/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/cloud-relay/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/cloud-relay/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/cloud-relay/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/cloud-relay/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/cloud-relay/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/cloud-relay/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/cloud-relay/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/cloud-relay/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/cloud-relay/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/cloud-relay/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">דילוג לתוכן</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="ניווט ראשי" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/he/" data-locale-link="" aria-label="דף הבית של Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/#features" data-locale-link="" data-i18n="common.features">תכונות</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/#guides" data-locale-link="" data-i18n="common.guides">מדריכים</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/support/" data-locale-link="" data-i18n="common.support">תמיכה</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="ערכת נושא: אוטומטי" title="ערכת נושא: אוטומטי" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">ערכת נושא</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="ערכת נושא" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">אוטומטי</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">בהירה</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">כהה</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">שפה</span>
+        <select class="language-select" data-language-select="" aria-label="שפה" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">אוטומטי (שפת הדפדפן)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option selected value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=he_guide-relay" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">החנות</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-relay.eyebrow">מדריך שליחה</p>
+        <h1 data-i18n="guide-relay.title">דיווח האזנות כשהגישה הישירה ל־Last.fm אינה זמינה</h1>
+        <p class="guide-intro" data-i18n="guide-relay.intro">Cloud relay הוא גיבוי לבחירתכם עבור רשתות שאינן מצליחות להגיע ישירות ל־API של Last.fm. הפעלתו אינה מחליפה את השליחה הישירה הרגילה.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=he_guide-relay" target="_blank" rel="noreferrer" data-i18n="home.openStore">פתיחה ב־Chrome Web Store</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/he/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">מדיניות פרטיות</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="בדף זה" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">בדף זה</strong>
+          <a href="#direct-first" data-i18n="guide-relay.directTitle">שליחה ישירה נשארת בעדיפות ראשונה</a>
+          <a href="#enable" data-i18n="guide-relay.enableTitle">הפעלת הגיבוי</a>
+          <a href="#data" data-i18n="guide-relay.dataTitle">מה מקבל הממסר</a>
+          <a href="#batching" data-i18n="guide-relay.batchingTitle">שליחה בקבוצות וחזרה אוטומטית לחיבור הישיר</a>
+          <a href="#check" data-i18n="guide-relay.checkTitle">בדקו שהכול פועל</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-cloud-relay.png" alt="הגדרות Cloud relay ו־Last.fm ב־YM Bridge" data-i18n-alt="guide-relay.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="direct-first">
+            <h2 data-i18n="guide-relay.directTitle">שליחה ישירה נשארת בעדיפות ראשונה</h2>
+            <div data-i18n-html="guide-relay.directBody"><p>ההגדרה <strong>שימוש בממסר בענן לדיווח האזנות כשהשליחה הישירה אינה זמינה</strong> פועלת בדיוק לפי שמה: YM Bridge עדיין מנסה תחילה לפנות ל־API של Last.fm מתוך Chrome. הממסר משמש לשליחת דיווחי האזנה רק לאחר כשל רשת בשליחה הישירה שמצדיק מעבר לגיבוי.</p><p>כשהגישה הישירה תקינה, החלונית מציגה <strong>יעד השליחה: ישירות ל־Last.fm</strong>, והממסר אינו משמש לדיווחי האזנה אלה.</p></div>
+          </section>
+
+          <section class="guide-section" id="enable">
+            <h2 data-i18n="guide-relay.enableTitle">הפעלת הגיבוי</h2>
+            <div data-i18n-html="guide-relay.enableBody"><ol><li>פתחו את <strong>הגדרות התוסף</strong> ומצאו את <strong>Cloud relay</strong>.</li><li>הפעילו את <strong>שימוש בממסר בענן לדיווח האזנות כשהשליחה הישירה אינה זמינה</strong>.</li><li>בשימוש הראשון, קראו את ההודעה על השימוש בנתונים ולחצו על <strong>אישור והשארת הממסר כגיבוי</strong>. השליחה דרך הגיבוי אינה מתחילה לפני אישור זה.</li></ol><p>אפשר להשבית את האפשרות בכל עת כדי לאפשר שליחה ישירה בלבד.</p></div>
+          </section>
+
+          <section class="guide-section" id="data">
+            <h2 data-i18n="guide-relay.dataTitle">מה מקבל הממסר</h2>
+            <div data-i18n-html="guide-relay.dataBody"><p>רק כאשר שליחה ישירה אינה זמינה, פרטי רצועות שההאזנה להן הסתיימה ומפתח ההפעלה של Last.fm נשלחים ב־HTTPS ל־Cloudflare Worker שמופעל בידי המפתח ומועברים ממנו ל־Last.fm.</p><p>הממסר אינו שומר במכוון היסטוריית האזנה, מפתחות הפעלה או גופי בקשות. Cloudflare עשויה לעבד את כתובת ה־IP ומטא־נתונים טכניים של הבקשה כספקית התשתית. הגילוי המלא מופיע ב<a href="https://www.ym-bridge.mytunnel.us.com/he/privacy-policy/" data-locale-link="">מדיניות הפרטיות</a>.</p></div>
+          </section>
+
+          <section class="guide-section" id="batching">
+            <h2 data-i18n="guide-relay.batchingTitle">שליחה בקבוצות וחזרה אוטומטית לחיבור הישיר</h2>
+            <div data-i18n-html="guide-relay.batchingBody"><p>דיווחי האזנה המיועדים לגיבוי נכנסים לתור ונשלחים בדרך כלל בקבוצה לאחר 10 רצועות או 30 דקות. כך מצטמצמת התעבורה דרך ה־Worker. החלונית מסמנת דיווחים אלה כ־<strong>ממסר</strong> ומשאירה אותם גלויים בתור דיווחי ההאזנה.</p><p>YM Bridge בודק מדי פעם את זמינות החיבור הישיר ל־Last.fm. כאשר הגישה מתחדשת, שליחות חדשות חוזרות אוטומטית למסלול הישיר, בלי צורך לשנות את הגדרת הממסר.</p></div>
+          </section>
+
+          <section class="guide-section" id="check">
+            <h2 data-i18n="guide-relay.checkTitle">בדקו שהכול פועל</h2>
+            <div data-i18n-html="guide-relay.checkBody"><ul><li>פתחו את חלונית הצד ובדקו את <strong>יעד השליחה</strong>.</li><li>פתחו את <strong>הצגת התור</strong> כדי לראות מצבים של ממסר, ניסיון חוזר או נכשל.</li><li>אם קבוצת דיווחים נשארה בתור לאחר המועד לשליחתה, לחצו פעם אחת על <strong>ניסיון חוזר</strong> ובדקו את השגיאה המעודכנת.</li><li>הצגת Last.fm כמחובר מאשרת שפרטי ההפעלה נשמרו. כשלעצמה היא אינה מוכיחה שיש גישה ישירה ל־API של Last.fm מהרשת הנוכחית.</li></ul></div>
+          </section>
+
+          <section class="related-guides" aria-label="מדריכים קשורים" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">מדריכים קשורים</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/he/guides/install-lastfm/" data-locale-link="">
+              <span data-i18n="home.guideInstallTitle">התקנה וחיבור Last.fm</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/he/guides/scrobble-queue/" data-locale-link="">
+              <span data-i18n="home.guideQueueTitle">הבנת תור דיווחי ההאזנה ושליחה חוזרת</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/he/" data-locale-link="" data-i18n="common.backProduct">חזרה לדף המוצר</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/he/support/" data-locale-link="" data-i18n="common.support">תמיכה</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/#guides" data-locale-link="" data-i18n="common.guides">מדריכים</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/privacy-policy/" data-locale-link="" data-i18n="common.privacy">פרטיות</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/support/" data-locale-link="" data-i18n="common.support">תמיכה</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=he_guide-relay" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">מיזם עצמאי. אינו קשור ל־Yandex או ל־Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>

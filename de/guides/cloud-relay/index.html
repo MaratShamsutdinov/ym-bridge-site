@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="de" dir="ltr" lang="de" data-page="guide-relay">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YM Bridge versucht Last.fm zuerst direkt und nutzt das optionale Cloud relay nur, wenn die direkte Scrobble-Zustellung nicht verfügbar ist.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Last.fm Cloud-relay-Fallback für Yandex Music | YM Bridge">
+  <meta property="og:description" content="YM Bridge versucht Last.fm zuerst direkt und nutzt das optionale Cloud relay nur, wenn die direkte Scrobble-Zustellung nicht verfügbar ist.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/de/guides/cloud-relay/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-cloud-relay.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <title>Last.fm Cloud-relay-Fallback für Yandex Music | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/de/guides/cloud-relay/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/cloud-relay/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/cloud-relay/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/cloud-relay/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/cloud-relay/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/cloud-relay/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/cloud-relay/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/cloud-relay/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/cloud-relay/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/cloud-relay/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/cloud-relay/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/cloud-relay/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/cloud-relay/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/cloud-relay/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/cloud-relay/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/cloud-relay/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/cloud-relay/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Hauptnavigation" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/de/" data-locale-link="" aria-label="Startseite von Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/de/#features" data-locale-link="" data-i18n="common.features">Funktionen</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/de/#guides" data-locale-link="" data-i18n="common.guides">Anleitungen</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/de/support/" data-locale-link="" data-i18n="common.support">Support</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="Darstellung: Automatisch" title="Darstellung: Automatisch" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">Darstellung</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="Darstellung" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">Automatisch</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">Hell</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">Dunkel</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">Sprache</span>
+        <select class="language-select" data-language-select="" aria-label="Sprache" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">Automatisch (Browser)</option>
+          <option selected value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=de_guide-relay" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">Store</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-relay.eyebrow">Zustellungsanleitung</p>
+        <h1 data-i18n="guide-relay.title">Scrobbeln, wenn Last.fm nicht direkt erreichbar ist</h1>
+        <p class="guide-intro" data-i18n="guide-relay.intro">Cloud relay ist ein optionaler Fallback für Netzwerke ohne direkten Zugriff auf die Last.fm-API. Seine Aktivierung ersetzt die normale direkte Zustellung nicht.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=de_guide-relay" target="_blank" rel="noreferrer" data-i18n="home.openStore">Im Chrome Web Store öffnen</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/de/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">Datenschutzerklärung</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="Auf dieser Seite" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">Auf dieser Seite</strong>
+          <a href="#direct-first" data-i18n="guide-relay.directTitle">Direkte Zustellung bleibt an erster Stelle</a>
+          <a href="#enable" data-i18n="guide-relay.enableTitle">Fallback aktivieren</a>
+          <a href="#data" data-i18n="guide-relay.dataTitle">Welche Daten das relay erhält</a>
+          <a href="#batching" data-i18n="guide-relay.batchingTitle">Bündelung und automatische Erholung</a>
+          <a href="#check" data-i18n="guide-relay.checkTitle">Funktion prüfen</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-cloud-relay.png" alt="Cloud-relay- und Last.fm-Einstellungen in YM Bridge" data-i18n-alt="guide-relay.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="direct-first">
+            <h2 data-i18n="guide-relay.directTitle">Direkte Zustellung bleibt an erster Stelle</h2>
+            <div data-i18n-html="guide-relay.directBody"><p>Die Einstellung <strong>Use Cloud relay for scrobbles when direct delivery is unavailable</strong> bedeutet genau das: YM Bridge versucht die Last.fm-API zuerst direkt aus Chrome. Das relay wird für Scrobbles nur nach einem geeigneten direkten Netzwerkfehler verwendet.</p><p>Bei gesundem Direktzugriff zeigt das Panel <strong>Delivery target: direct to Last.fm</strong>; das relay wird für diese Scrobbles nicht genutzt.</p></div>
+          </section>
+
+          <section class="guide-section" id="enable">
+            <h2 data-i18n="guide-relay.enableTitle">Fallback aktivieren</h2>
+            <div data-i18n-html="guide-relay.enableBody"><ol><li>Öffnen Sie <strong>Extension settings</strong> und suchen Sie <strong>Cloud relay</strong>.</li><li>Aktivieren Sie <strong>Use Cloud relay for scrobbles when direct delivery is unavailable</strong>.</li><li>Lesen Sie bei der ersten Verwendung den Datenhinweis und klicken Sie auf <strong>Accept and keep relay fallback</strong>. Vor dieser Zustimmung startet die Fallback-Zustellung nicht.</li></ol><p>Sie können die Option jederzeit deaktivieren und nur direkte Zustellung verlangen.</p></div>
+          </section>
+
+          <section class="guide-section" id="data">
+            <h2 data-i18n="guide-relay.dataTitle">Welche Daten das relay erhält</h2>
+            <div data-i18n-html="guide-relay.dataBody"><p>Nur wenn die direkte Zustellung nicht verfügbar ist, werden Metadaten abgeschlossener Titel und der Last.fm-Sitzungsschlüssel per HTTPS an den vom Entwickler betriebenen Cloudflare Worker gesendet und an Last.fm weitergeleitet.</p><p>Das relay speichert Hörverlauf, Sitzungsschlüssel oder Anfragetexte nicht absichtlich. Cloudflare kann als Infrastrukturanbieter IP-Adresse und technische Anfragemetadaten verarbeiten. Die vollständige Offenlegung steht in der <a href="https://www.ym-bridge.mytunnel.us.com/de/privacy-policy/" data-locale-link="">Datenschutzerklärung</a>.</p></div>
+          </section>
+
+          <section class="guide-section" id="batching">
+            <h2 data-i18n="guide-relay.batchingTitle">Bündelung und automatische Erholung</h2>
+            <div data-i18n-html="guide-relay.batchingBody"><p>Fallback-Scrobbles werden eingereiht und normalerweise nach 10 Titeln oder 30 Minuten als Paket gesendet. Das reduziert den Traffic über den Worker. Das Panel kennzeichnet solche Einträge als <strong>Relay</strong> und zeigt sie in der Warteschlange.</p><p>YM Bridge prüft regelmäßig den direkten Last.fm-Zugriff. Sobald er wieder funktioniert, kehren neue Zustellungen automatisch zum direkten Weg zurück; die relay-Einstellung muss nicht gelöscht werden.</p></div>
+          </section>
+
+          <section class="guide-section" id="check">
+            <h2 data-i18n="guide-relay.checkTitle">Funktion prüfen</h2>
+            <div data-i18n-html="guide-relay.checkBody"><ul><li>Öffnen Sie das Seitenpanel und lesen Sie <strong>Delivery target</strong>.</li><li>Öffnen Sie <strong>View queue</strong>, um Relay, Retry oder Failed zu sehen.</li><li>Bleibt ein fälliges Paket liegen, klicken Sie einmal auf <strong>Retry</strong> und prüfen Sie den aktualisierten Fehler.</li><li>Die Last.fm-Anzeige <strong>connected</strong> bestätigt die gespeicherte Sitzung, beweist aber nicht allein, dass die direkte API im aktuellen Netzwerk erreichbar ist.</li></ul></div>
+          </section>
+
+          <section class="related-guides" aria-label="Weitere Anleitungen" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">Weitere Anleitungen</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/de/guides/install-lastfm/" data-locale-link="">
+              <span data-i18n="home.guideInstallTitle">Last.fm installieren und verbinden</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/de/guides/scrobble-queue/" data-locale-link="">
+              <span data-i18n="home.guideQueueTitle">Scrobble-Warteschlange verstehen und erneut senden</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/de/" data-locale-link="" data-i18n="common.backProduct">Zurück zur Produktseite</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/de/support/" data-locale-link="" data-i18n="common.support">Support</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/de/#guides" data-locale-link="" data-i18n="common.guides">Anleitungen</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/de/privacy-policy/" data-locale-link="" data-i18n="common.privacy">Datenschutz</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/de/support/" data-locale-link="" data-i18n="common.support">Support</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=de_guide-relay" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">Unabhängiges Projekt. Keine Verbindung zu Yandex oder Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>

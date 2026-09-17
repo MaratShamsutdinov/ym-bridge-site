@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="uk" dir="ltr" lang="uk" data-page="guide-install">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Установіть YM Bridge, підключіть Last.fm, перевірте прямий скроблінг і скористайтеся резервним входом, якщо API Last.fm недоступний.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Як підключити Yandex Music до Last.fm | YM Bridge">
+  <meta property="og:description" content="Установіть YM Bridge, підключіть Last.fm, перевірте прямий скроблінг і скористайтеся резервним входом, якщо API Last.fm недоступний.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/uk/guides/install-lastfm/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-lastfm-connect.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <title>Як підключити Yandex Music до Last.fm | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/uk/guides/install-lastfm/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/install-lastfm/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/install-lastfm/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/install-lastfm/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/install-lastfm/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/install-lastfm/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/install-lastfm/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/install-lastfm/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/install-lastfm/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/install-lastfm/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/install-lastfm/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/install-lastfm/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/install-lastfm/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/install-lastfm/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/install-lastfm/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/install-lastfm/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/install-lastfm/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Перейти до вмісту</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Основна навігація" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/uk/" data-locale-link="" aria-label="Головна сторінка Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/uk/#features" data-locale-link="" data-i18n="common.features">Можливості</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/uk/#guides" data-locale-link="" data-i18n="common.guides">Посібники</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/uk/support/" data-locale-link="" data-i18n="common.support">Підтримка</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="Тема: Авто" title="Тема: Авто" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">Тема</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="Тема" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">Авто</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">Світла</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">Темна</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">Мова</span>
+        <select class="language-select" data-language-select="" aria-label="Мова" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">Автоматично (браузер)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option selected value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=uk_guide-install" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">Магазин</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-install.eyebrow">Налаштування</p>
+        <h1 data-i18n="guide-install.title">Як підключити Yandex Music до Last.fm</h1>
+        <p class="guide-intro" data-i18n="guide-install.intro">YM Bridge читає трек із відкритої вкладки Yandex Music і надсилає відповідні прослуховування у ваш Last.fm. Доставкою продовжує керувати розширення.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=uk_guide-install" target="_blank" rel="noreferrer" data-i18n="home.openStore">Відкрити в Chrome Web Store</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/uk/support/" data-locale-link="" data-i18n="common.support">Підтримка</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="На цій сторінці" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">На цій сторінці</strong>
+          <a href="#before" data-i18n="guide-install.beforeTitle">Перед початком</a>
+          <a href="#connect" data-i18n="guide-install.connectTitle">Підключіть обліковий запис Last.fm</a>
+          <a href="#verify" data-i18n="guide-install.verifyTitle">Перевірте доставку</a>
+          <a href="#alternative" data-i18n="guide-install.alternativeTitle">Якщо звичайний вхід недоступний</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-lastfm-connect.png" alt="Налаштування YM Bridge з підключенням Last.fm і діагностикою" data-i18n-alt="guide-install.imageAlt" width="1280" height="800">
+          </figure>
+
+          <section class="guide-section" id="before">
+            <h2 data-i18n="guide-install.beforeTitle">Перед початком</h2>
+            <div data-i18n-html="guide-install.beforeBody"><ul><li>Використовуйте Chrome і тримайте Yandex Music відкритим у вкладці.</li><li>Установіть YM Bridge із Chrome Web Store.</li><li>Підготуйте обліковий запис Last.fm. Windows companion для скроблінгу не потрібний.</li></ul></div>
+          </section>
+
+          <section class="guide-section" id="connect">
+            <h2 data-i18n="guide-install.connectTitle">Підключіть обліковий запис Last.fm</h2>
+            <div data-i18n-html="guide-install.connectBody"><ol><li>Відкрийте бічну панель YM Bridge, розгорніть <strong>Tools</strong>, виберіть <strong>Settings</strong>, а потім <strong>Extension settings</strong>.</li><li>У розділі <strong>Last.fm setup</strong> натисніть <strong>Connect Last.fm</strong>.</li><li>Дозвольте доступ на Last.fm. Розширення збереже отриманий ключ сесії у сховищі Chrome.</li><li>Поверніться до панелі й переконайтеся, що Last.fm має стан <strong>connected</strong>.</li></ol></div>
+          </section>
+
+          <section class="guide-section" id="verify">
+            <h2 data-i18n="guide-install.verifyTitle">Перевірте доставку</h2>
+            <div data-i18n-html="guide-install.verifyBody"><p>Запустіть трек у Yandex Music і відкрийте бічну панель. Мають з'явитися назва, виконавець і ціль доставки. За звичайного доступу показано <strong>direct to Last.fm</strong>.</p><p>Порожня черга може бути нормальною, поки поточний трек обробляється наживо. Після надсилання відповідного прослуховування оновиться <strong>Last delivery</strong>, а трек з'явиться в історії Last.fm.</p></div>
+          </section>
+
+          <section class="guide-section" id="alternative">
+            <h2 data-i18n="guide-install.alternativeTitle">Якщо звичайний вхід недоступний</h2>
+            <div data-i18n-html="guide-install.alternativeBody"><p>Спочатку спробуйте <strong>Connect Last.fm</strong>. Якщо прямий API автентифікації недоступний, YM Bridge може завершити обмін схваленого токена через свій сервіс.</p><p>Альтернативна форма з ім'ям або електронною поштою та паролем працює лише після натискання кнопки. Дані одноразово надсилаються через HTTPS для отримання ключа сесії Last.fm; пароль очищається з форми, не зберігається розширенням і навмисно не журналюється relay. Повну схему описує <a href="https://www.ym-bridge.mytunnel.us.com/uk/privacy-policy/" data-locale-link="">Політика конфіденційності</a>.</p></div>
+          </section>
+
+          <section class="related-guides" aria-label="Пов'язані посібники" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">Пов'язані посібники</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/uk/guides/cloud-relay/" data-locale-link="">
+              <span data-i18n="home.guideRelayTitle">Використовувати Cloud relay, коли прямий доступ до Last.fm недоступний</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/uk/guides/scrobble-queue/" data-locale-link="">
+              <span data-i18n="home.guideQueueTitle">Зрозуміти чергу скроблів і повторити надсилання</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/uk/" data-locale-link="" data-i18n="common.backProduct">Повернутися на сторінку продукту</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/uk/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">Політика конфіденційності</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/uk/#guides" data-locale-link="" data-i18n="common.guides">Посібники</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/uk/privacy-policy/" data-locale-link="" data-i18n="common.privacy">Конфіденційність</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/uk/support/" data-locale-link="" data-i18n="common.support">Підтримка</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=uk_guide-install" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">Незалежний проєкт. Не пов'язаний із Yandex або Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>

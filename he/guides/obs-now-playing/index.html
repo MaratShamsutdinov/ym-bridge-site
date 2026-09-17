@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="he" dir="rtl" lang="he" data-page="guide-obs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ייצאו מ־YM Bridge את טקסט הרצועה המתנגנת ב־Yandex Music, נתוני JSON ועטיפה לתיקייה מקומית עבור שכבות תצוגה ב־OBS Studio.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="הצגת הרצועה המתנגנת ב־Yandex Music ב־OBS | YM Bridge">
+  <meta property="og:description" content="ייצאו מ־YM Bridge את טקסט הרצועה המתנגנת ב־Yandex Music, נתוני JSON ועטיפה לתיקייה מקומית עבור שכבות תצוגה ב־OBS Studio.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/he/guides/obs-now-playing/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-obs-now-playing.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script src="/site-lightbox.js" defer></script>
+  <script src="/site-showcase.js" defer></script>
+  <title>הצגת הרצועה המתנגנת ב־Yandex Music ב־OBS | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/he/guides/obs-now-playing/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/obs-now-playing/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/guides/obs-now-playing/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/guides/obs-now-playing/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/guides/obs-now-playing/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/guides/obs-now-playing/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/guides/obs-now-playing/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/guides/obs-now-playing/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/guides/obs-now-playing/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/guides/obs-now-playing/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/guides/obs-now-playing/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/guides/obs-now-playing/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/guides/obs-now-playing/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/guides/obs-now-playing/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/guides/obs-now-playing/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/guides/obs-now-playing/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/guides/obs-now-playing/" hreflang="zh-TW" rel="alternate"></head>
+<body class="document-page guide-page feature-guide">
+  <a class="skip-link" href="#main" data-i18n="common.skip">דילוג לתוכן</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="ניווט ראשי" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="https://www.ym-bridge.mytunnel.us.com/he/" data-locale-link="" aria-label="דף הבית של Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links document-nav-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/#features" data-locale-link="" data-i18n="common.features">תכונות</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/#guides" data-locale-link="" data-i18n="common.guides">מדריכים</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/support/" data-locale-link="" data-i18n="common.support">תמיכה</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="ערכת נושא: אוטומטי" title="ערכת נושא: אוטומטי" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">ערכת נושא</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="ערכת נושא" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">אוטומטי</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">בהירה</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">כהה</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">שפה</span>
+        <select class="language-select" data-language-select="" aria-label="שפה" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">אוטומטי (שפת הדפדפן)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option selected value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=he_guide-obs" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">החנות</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="guide-main" id="main">
+    <article class="guide-article">
+      <header class="guide-header">
+        <p class="eyebrow" data-i18n="guide-obs.eyebrow">מדריך שידור</p>
+        <h1 data-i18n="guide-obs.title">הציגו ב־OBS את הרצועה המתנגנת ב־Yandex Music</h1>
+        <p class="guide-intro" data-i18n="guide-obs.intro">YM Bridge יכול לסנכרן קובצי טקסט, JSON ועטיפה מקומיים עם הרצועה הנוכחית, כך שסצנה ב־OBS תקרא אותם ללא שירות מרוחק לשכבות תצוגה.</p>
+        <div class="guide-header-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=he_guide-obs" target="_blank" rel="noreferrer" data-i18n="home.openStore">פתיחה ב־Chrome Web Store</a>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/he/support/" data-locale-link="" data-i18n="common.support">תמיכה</a>
+        </div>
+      </header>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="בדף זה" data-i18n-aria="common.onThisPage">
+          <strong data-i18n="common.onThisPage">בדף זה</strong>
+          <a href="#enable" data-i18n="guide-obs.enableTitle">מתן גישה לתיקייה</a>
+          <a href="#files" data-i18n="guide-obs.filesTitle">הקבצים ש־YM Bridge כותב</a>
+          <a href="#obs" data-i18n="guide-obs.obsTitle">הוספת הקבצים ל־OBS</a>
+          <a href="#health" data-i18n="guide-obs.healthTitle">בדיקת תקינות הייצוא</a>
+        </nav>
+
+        <div class="guide-content">
+          <figure class="guide-figure">
+            <img src="/assets/showcase-obs-now-playing.png" alt="YM Bridge Now Playing export settings for OBS" width="1280" height="800">
+          </figure>
+
+          <div class="obs-showcase layout-showcase reveal-on-scroll" data-showcase="" data-showcase-default="ready">
+            <div class="showcase-switcher" role="tablist" aria-label="מצבי ייצוא הרצועה המתנגנת" data-i18n-aria="guide-obs.statesAria">
+              <button type="button" role="tab" aria-selected="false" data-showcase-tab="permission" data-i18n="guide-obs.permissionLabel">לפני מתן גישה</button>
+              <button type="button" role="tab" aria-selected="true" data-showcase-tab="ready" data-i18n="guide-obs.readyLabel">מוכן</button>
+            </div>
+            <div class="obs-stage">
+              <section class="obs-state permission-state" data-showcase-panel="permission" hidden>
+                <div class="obs-status warning"><span aria-hidden="true"></span><strong>Now Playing files</strong><em>permission needed</em></div>
+                <p data-i18n="guide-obs.permissionDemo">Chrome דורש בחירה מפורשת של תיקייה לפני שהתוסף יכול ליצור קבצים מקומיים.</p>
+                <span class="demo-command" data-i18n="guide-obs.grantLabel">מתן גישה לתיקייה</span>
+              </section>
+              <section class="obs-state ready-state" data-showcase-panel="ready">
+                <div class="obs-status ok"><span aria-hidden="true"></span><strong>Now Playing files</strong><em>writing - just now</em></div>
+                <div class="obs-file-list" aria-label="הקבצים שנוצרים" data-i18n-aria="guide-obs.filesAria">
+                  <div><span class="file-type text">TXT</span><code>now-playing.txt</code><small>Moonbeam - Look Around</small></div>
+                  <div><span class="file-type json">JSON</span><code>now-playing.json</code><small>{ artist, track, album, cover }</small></div>
+                  <div><span class="file-type image">PNG</span><code>now-playing-cover.png</code><small>Current cover artwork</small></div>
+                </div>
+                <div class="obs-actions"><span data-i18n="guide-obs.changeFolderLabel">שינוי תיקייה</span><span data-i18n="guide-obs.disableLabel">השבתת ייצוא הרצועה המתנגנת</span></div>
+              </section>
+            </div>
+          </div>
+
+          <section class="guide-section" id="enable">
+            <h2 data-i18n="guide-obs.enableTitle">מתן גישה לתיקייה</h2>
+            <div data-i18n-html="guide-obs.enableBody"><p>פתחו את חלונית הצד, הרחיבו את <strong>כלים</strong>, בחרו <strong>הגדרות</strong> ולחצו על <strong>מתן גישה לתיקייה</strong> בקטע קובצי הרצועה המתנגנת. בחרו תיקייה ייעודית ש־OBS יוכל להמשיך לקרוא ממנה.</p><p>Chrome מבקש מכם לבחור ישירות משום שהתוסף אינו יכול לבחור תיקייה בשמכם. ההרשאה נשארת מקומית, ואפשר לבטל אותה דרך <strong>שינוי תיקייה</strong> או <strong>השבתת ייצוא הרצועה המתנגנת</strong>.</p></div>
+          </section>
+
+          <section class="guide-section" id="files">
+            <h2 data-i18n="guide-obs.filesTitle">הקבצים ש־YM Bridge כותב</h2>
+            <div data-i18n-html="guide-obs.filesBody"><p><strong>now-playing.txt</strong> מכיל שורת טקסט פשוטה עם אמן ורצועה עבור מקור טקסט ב־OBS. <strong>now-playing.json</strong> מכיל מטא־נתונים מובנים עבור שכבות תצוגה מותאמות בדפדפן. <strong>now-playing-cover.png</strong> עוקב אחר העטיפה הנוכחית כאשר ייצוא העטיפה מופעל.</p><p>הקבצים מתחלפים באותו מיקום עם שינוי הנגינה. הם נשארים במחשב שלכם; שליחה ל־Last.fm והיישום הנלווה האופציונלי למחשב הם תכונות נפרדות.</p></div>
+          </section>
+
+          <section class="guide-section" id="obs">
+            <h2 data-i18n="guide-obs.obsTitle">הוספת הקבצים ל־OBS</h2>
+            <div data-i18n-html="guide-obs.obsBody"><ol><li>הוסיפו מקור טקסט מסוג <strong>Text (GDI+)</strong>, הפעילו קריאה מקובץ ובחרו <strong>now-playing.txt</strong>.</li><li>הוסיפו מקור <strong>תמונה (Image)</strong> עבור <strong>now-playing-cover.png</strong>.</li><li>עצבו ומקמו את שני המקורות בסצנה. OBS מזהה עדכונים מאוחרים יותר בקבצים בלי שהתוסף יצטרך לשלוט ב־OBS.</li></ol><p>השתמשו בקובץ JSON כאשר תוכנת שכבת התצוגה זקוקה לערכים נפרדים של האמן, שם הרצועה, האלבום או העטיפה.</p></div>
+          </section>
+
+          <section class="guide-section" id="health">
+            <h2 data-i18n="guide-obs.healthTitle">בדיקת תקינות הייצוא</h2>
+            <div data-i18n-html="guide-obs.healthBody"><p>פתחו את <strong>תקינות השליטה</strong> ובדקו את השורה <strong>קובצי הרצועה המתנגנת</strong>. המצב <strong>כתיבה · זה עתה</strong> מאשר עדכון שהתרחש לאחרונה; <strong>נדרשת הרשאה</strong> מציין שיש לתת ל־Chrome שוב גישה לתיקייה.</p><p>אם פרטי הרצועה עצמם אינם מעודכנים, הפעילו את <strong>תיקון השליטה</strong> וטענו מחדש את הכרטיסייה של Yandex Music. גישה לתיקייה אינה מתקנת חיבור לא פעיל לדף.</p></div>
+          </section>
+
+          <section class="related-guides" aria-label="מדריכים קשורים" data-i18n-aria="common.relatedGuides">
+            <h2 data-i18n="common.relatedGuides">מדריכים קשורים</h2>
+            <a href="https://www.ym-bridge.mytunnel.us.com/he/guides/player-layouts/" data-locale-link="">
+              <span data-i18n="home.guideLayoutsTitle">הכירו את תצוגות המיני־נגן וחלונית הצד</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.ym-bridge.mytunnel.us.com/he/guides/keyboard-shortcuts/" data-locale-link="">
+              <span data-i18n="home.guideShortcutsTitle">שליטה בנגן באמצעות קיצורי מקשים</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <div class="document-actions">
+            <a class="button secondary" href="https://www.ym-bridge.mytunnel.us.com/he/" data-locale-link="" data-i18n="common.backProduct">חזרה לדף המוצר</a>
+            <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/he/privacy-policy/" data-locale-link="" data-i18n="common.privacyPolicy">מדיניות פרטיות</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/#guides" data-locale-link="" data-i18n="common.guides">מדריכים</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/privacy-policy/" data-locale-link="" data-i18n="common.privacy">פרטיות</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/he/support/" data-locale-link="" data-i18n="common.support">תמיכה</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=he_guide-obs" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">מיזם עצמאי. אינו קשור ל־Yandex או ל־Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html data-prerendered="true" data-locale="ru" dir="ltr" lang="ru" data-page="home">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Управление Яндекс Музыкой и необязательный скробблинг в Last.fm через боковую панель Chrome и отдельный мини-плеер.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#101618">
+  <meta property="og:title" content="Скробблер Last.fm и мини-плеер Яндекс Музыки | YM Bridge">
+  <meta property="og:description" content="Боковая панель, мини-плеер и необязательный скробблинг в Last.fm для Яндекс Музыки в Chrome.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ym-bridge.mytunnel.us.com/ru/">
+  <meta property="og:image" content="https://www.ym-bridge.mytunnel.us.com/assets/showcase-side-panel.png">
+  <link rel="icon" href="/assets/icon128.png">
+  <script src="/site-theme.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site-guides-i18n.js" defer></script>
+  <script src="/site-he.js" defer></script>
+  <script src="/site-i18n.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://www.ym-bridge.mytunnel.us.com/#software-application",
+  "name": "Yandex Music to Last.fm Bridge",
+  "alternateName": "YM Bridge",
+  "description": "Управление Яндекс Музыкой и необязательный скробблинг в Last.fm через боковую панель Chrome и отдельный мини-плеер.",
+  "url": "https://www.ym-bridge.mytunnel.us.com/ru/",
+  "installUrl": "https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin",
+  "downloadUrl": "https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Google Chrome",
+  "softwareVersion": "1.0.34",
+  "dateModified": "2026-09-18",
+  "isAccessibleForFree": true,
+  "image": "https://www.ym-bridge.mytunnel.us.com/assets/icon128.png",
+  "screenshot": [
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-side-panel.png",
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-mini-player.png",
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-light-theme.png",
+    "https://www.ym-bridge.mytunnel.us.com/assets/showcase-lastfm-stats.png"
+  ],
+  "featureList": [
+    "Yandex Music playback controls",
+    "Optional direct Last.fm scrobbling with Cloud relay fallback",
+    "Chrome side panel and floating mini player",
+    "Now Playing export for OBS"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "inLanguage": "ru"
+}
+</script>
+  <title>Скробблер Last.fm и мини-плеер Яндекс Музыки | YM Bridge</title>
+<link href="https://www.ym-bridge.mytunnel.us.com/ru/" rel="canonical"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/" hreflang="x-default" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/de/" hreflang="de" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/" hreflang="en" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/es/" hreflang="es" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/fr/" hreflang="fr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/he/" hreflang="he" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ja/" hreflang="ja" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ko/" hreflang="ko" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pl/" hreflang="pl" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/pt-BR/" hreflang="pt-BR" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ro/" hreflang="ro" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/ru/" hreflang="ru" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/tr/" hreflang="tr" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/uk/" hreflang="uk" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-CN/" hreflang="zh-CN" rel="alternate"><link data-i18n-alternate="" href="https://www.ym-bridge.mytunnel.us.com/zh-TW/" hreflang="zh-TW" rel="alternate"></head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="common.skip">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Основная навигация" data-i18n-aria="common.primaryNav">
+      <a class="brand" href="#top" aria-label="Главная страница Yandex Music to Last.fm Bridge" data-i18n-aria="common.brandHome">
+        <img src="/assets/icon128.png" alt="" width="38" height="38">
+        <span>YM Bridge</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features" data-i18n="common.features">Возможности</a>
+        <a href="#guides" data-i18n="common.guides">Руководства</a>
+        <a href="#privacy" data-i18n="common.privacy">Конфиденциальность</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ru/support/" data-locale-link="" data-i18n="common.support">Поддержка</a>
+      </div>
+      <div class="theme-picker" data-theme-picker="">
+        <button class="theme-button" type="button" data-theme-button="" aria-label="Тема: Авто" title="Тема: Авто" aria-haspopup="menu" aria-expanded="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" data-theme-name="" data-i18n="common.theme">Тема</span>
+        </button>
+        <div class="theme-menu" data-theme-menu="" role="menu" aria-label="Тема" data-i18n-aria="common.theme" hidden>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="true" data-theme-option="auto">
+            <span class="theme-swatch auto" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeAuto">Авто</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="light">
+            <span class="theme-swatch light" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeLight">Светлая</span>
+          </button>
+          <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-option="dark">
+            <span class="theme-swatch dark" aria-hidden="true"></span>
+            <span data-theme-label="" data-i18n="common.themeDark">Тёмная</span>
+          </button>
+        </div>
+      </div>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="common.language">Язык</span>
+        <select class="language-select" data-language-select="" aria-label="Язык" data-i18n-aria="common.language">
+          <option value="auto" data-i18n="common.languageAuto">Авто (язык браузера)</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="he" lang="he" dir="rtl">עברית</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ro">Română</option>
+          <option selected value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+      <a class="nav-install" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ru_home" target="_blank" rel="noreferrer" aria-label="Chrome Web Store" data-i18n-aria="common.store">
+        <span class="nav-install-full" data-i18n="common.store">Chrome Web Store</span>
+        <span class="nav-install-short" data-i18n="common.storeShort">Магазин</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <span class="hero-art" role="img" aria-label="Плеер в фокус-режиме с обложкой альбома и элементами управления Яндекс Музыкой" data-i18n-aria="home.heroArtAlt"></span>
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="home.heroEyebrow">Расширение Chrome для Яндекс Музыки</p>
+        <h1 data-i18n-html="home.heroTitle">Yandex Music<br>to Last.fm Bridge</h1>
+        <p class="hero-copy" data-i18n="home.heroCopy">Управление воспроизведением, масштабируемый мини-плеер и необязательный скробблинг в Last.fm без перехода с текущей вкладки.</p>
+        <div class="hero-actions">
+          <a class="button primary" data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ru_home" target="_blank" rel="noreferrer" data-i18n="home.openStore">Открыть в Chrome Web Store</a>
+          <a class="button secondary" href="#features" data-i18n="home.seeHow">Посмотреть возможности</a>
+        </div>
+        <p class="hero-note" data-i18n="home.heroNote">В расширении нет рекламы, продуктовой аналитики и поведенческого трекинга. Desktop companion необязателен.</p>
+      </div>
+    </section>
+
+    <section class="signal-band" aria-label="Основные возможности" data-i18n-aria="home.signalAria">
+      <div class="signal-inner">
+        <div><strong data-i18n="home.signalPanelTitle">Боковая панель</strong><span data-i18n="home.signalPanelBody">Управление рядом с любой вкладкой</span></div>
+        <div><strong data-i18n="home.signalMiniTitle">Мини-плеер</strong><span data-i18n="home.signalMiniBody">Отдельное окно любого размера</span></div>
+        <div><strong>Last.fm</strong><span data-i18n="home.signalLastfmBody">Сначала напрямую, relay как резерв</span></div>
+        <div><strong data-i18n="home.signalObsTitle">Экспорт для OBS</strong><span data-i18n="home.signalObsBody">TXT, JSON и обложка</span></div>
+      </div>
+    </section>
+
+    <section class="section control-section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="home.controlEyebrow">Всё управление в одном месте</p>
+        <h2 data-i18n="home.controlTitle">Плеер всегда рядом</h2>
+        <p data-i18n="home.controlBody">Боковая панель следует за текущим треком Яндекс Музыки и собирает самые нужные элементы управления в компактном интерфейсе.</p>
+      </div>
+      <img class="wide-showcase" src="/assets/showcase-side-panel.png" alt="Тёмная боковая панель с обложкой, управлением воспроизведением, состоянием скробблинга и инструментами" data-i18n-alt="home.controlImageAlt" width="1280" height="800" loading="lazy">
+    </section>
+
+    <section class="section showcase-grid" aria-label="Варианты плеера" data-i18n-aria="home.playerViewsAria">
+      <article class="showcase-card">
+        <img src="/assets/showcase-mini-player.png" alt="Масштабируемый мини-плеер в светлой и тёмной темах" data-i18n-alt="home.miniImageAlt" width="1280" height="800" loading="lazy">
+        <div>
+          <p class="eyebrow" data-i18n="home.miniEyebrow">Отдельное управление</p>
+          <h2 data-i18n="home.miniTitle">Мини-плеер</h2>
+          <p data-i18n="home.miniBody">Откройте отдельное окно, меняйте его размер от компактных кнопок до режима с крупной обложкой и оставляйте на другом экране.</p>
+        </div>
+      </article>
+      <article class="showcase-card reverse">
+        <img src="/assets/showcase-light-theme.png" alt="Боковая панель Яндекс Музыки в светлой теме" data-i18n-alt="home.themeImageAlt" width="1280" height="800" loading="lazy">
+        <div>
+          <p class="eyebrow" data-i18n="home.themeEyebrow">Оформление</p>
+          <h2 data-i18n="home.themeTitle">Светлая и тёмная темы</h2>
+          <p data-i18n="home.themeBody">Подберите панель под рабочий стол. Акценты из цветов обложки выделяют текущий трек, не перегружая интерфейс.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="feature-band">
+      <div class="section feature-layout">
+        <div class="feature-copy">
+          <p class="eyebrow" data-i18n="home.scrobbleEyebrow">Больше, чем кнопки плеера</p>
+          <h2 data-i18n="home.scrobbleTitle">Прозрачный скробблинг</h2>
+          <p data-i18n="home.scrobbleBody">Подключайте Last.fm, когда он нужен. Расширение показывает очередь доставки, повторяет неудачные отправки и выводит подробную статистику при прямом подключении.</p>
+          <ul class="feature-list">
+            <li data-i18n="home.scrobbleDirect">Прямая доставка в Last.fm из браузера</li>
+            <li data-i18n="home.scrobbleRelay">Автоматический Cloud relay при недоступности прямого соединения; его можно отключить</li>
+            <li data-i18n="home.scrobbleQueue">Состояния очереди, повторные попытки и диагностика управления</li>
+            <li data-i18n="home.scrobbleShortcuts">Переназначаемые горячие клавиши Chrome</li>
+          </ul>
+        </div>
+        <img src="/assets/showcase-lastfm-stats.png" alt="Подробная статистика Last.fm с графиками, альбомами и последними треками" data-i18n-alt="home.scrobbleImageAlt" width="1280" height="800" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section details-grid" aria-label="Дополнительные возможности" data-i18n-aria="home.detailsAria">
+      <article>
+        <span class="detail-mark green" aria-hidden="true"></span>
+        <h3 data-i18n="home.playbackTitle">Воспроизведение</h3>
+        <p data-i18n="home.playbackBody">Воспроизводите, ставьте на паузу, перематывайте, меняйте громкость и треки, управляйте лайком и дизлайком, когда Яндекс Музыка их предоставляет.</p>
+      </article>
+      <article>
+        <span class="detail-mark blue" aria-hidden="true"></span>
+        <h3 data-i18n="home.filesTitle">Файлы Now Playing</h3>
+        <p data-i18n="home.filesBody">После явного выбора папки сохраняйте текущий трек в TXT и JSON вместе с необязательным локальным файлом обложки для OBS.</p>
+      </article>
+      <article>
+        <span class="detail-mark red" aria-hidden="true"></span>
+        <h3 data-i18n="home.coverTitle">Действия с обложкой</h3>
+        <p data-i18n="home.coverBody">Открывайте обложку, копируйте её URL или изображение и значение Исполнитель - Трек из панели или мини-плеера.</p>
+      </article>
+      <article>
+        <span class="detail-mark gold" aria-hidden="true"></span>
+        <h3 data-i18n="home.companionCardTitle">Необязательный companion</h3>
+        <p data-i18n="home.companionCardBody">Windows companion добавляет нативные уведомления о смене трека. Воспроизведением и скробблингом по-прежнему занимается расширение.</p>
+      </article>
+    </section>
+
+    <section class="guides-band" id="guides">
+      <div class="section guides-section">
+        <div class="guides-heading">
+          <p class="eyebrow" data-i18n="home.guidesEyebrow">Практические руководства</p>
+          <h2 data-i18n="home.guidesTitle">Настройте скробблинг и следите за его работой</h2>
+          <p data-i18n="home.guidesIntro">Пошаговые инструкции по подключению Last.fm, резервной доставке direct-first и устранению задержек скробблинга.</p>
+        </div>
+        <nav class="guide-index-list" aria-label="Руководства YM Bridge" data-i18n-aria="home.guidesAria">
+          <a href="https://www.ym-bridge.mytunnel.us.com/ru/guides/install-lastfm/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">01</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideInstallTitle">Установить расширение и подключить Last.fm</strong>
+              <span data-i18n="home.guideInstallBody">Авторизуйте аккаунт, проверьте сохранённую сессию и первую прямую отправку скроббла.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ru/guides/cloud-relay/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">02</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideRelayTitle">Использовать Cloud relay, когда прямой доступ к Last.fm недоступен</strong>
+              <span data-i18n="home.guideRelayBody">Узнайте, когда включается резервный путь, какие данные передаются и как YM Bridge возвращается к прямой доставке.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ru/guides/scrobble-queue/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">03</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideQueueTitle">Понять очередь скробблов и повторить отправку</strong>
+              <span data-i18n="home.guideQueueBody">Разберитесь в состояниях Pending, Relay, Retry и Failed, не принимая текущий трек за потерянный.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ru/guides/player-layouts/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">04</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideLayoutsTitle">Выбрать режим мини-плеера и боковой панели</strong>
+              <span data-i18n="home.guideLayoutsBody">Сравните полный интерфейс с режимами Progress disc, Ambient, Control deck и Glass card.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ru/guides/keyboard-shortcuts/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">05</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideShortcutsTitle">Управлять воспроизведением горячими клавишами</strong>
+              <span data-i18n="home.guideShortcutsBody">Назначьте удобные сочетания и выберите команды, которые будут работать глобально.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.ym-bridge.mytunnel.us.com/ru/guides/obs-now-playing/" data-locale-link="">
+            <span class="guide-index-number" aria-hidden="true">06</span>
+            <span class="guide-index-copy">
+              <strong data-i18n="home.guideObsTitle">Экспортировать Now Playing для OBS</strong>
+              <span data-i18n="home.guideObsBody">Записывайте локальные TXT, JSON и обложку, синхронизированные с текущим треком Яндекс Музыки.</span>
+            </span>
+            <span class="guide-index-arrow" aria-hidden="true">→</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="privacy-band" id="privacy">
+      <div class="section privacy-layout">
+        <div>
+          <p class="eyebrow" data-i18n="home.privacyEyebrow">Локальная работа по умолчанию</p>
+          <h2 data-i18n="home.privacyTitle">Ваше прослушивание остаётся под вашим контролем</h2>
+        </div>
+        <div class="privacy-points">
+          <p data-i18n-html="home.privacyNoAnalytics"><strong>Без рекламы и продуктовой аналитики.</strong> Настройки и сессия Last.fm хранятся в хранилище расширения Chrome.</p>
+          <p data-i18n-html="home.privacyActions"><strong>Только явные действия.</strong> Доступ к файлам и буферу обмена происходит лишь после предоставления доступа или нажатия соответствующей команды.</p>
+          <p data-i18n-html="home.privacyNetwork"><strong>Контролируемые сетевые маршруты.</strong> Сначала расширение отправляет данные в Last.fm напрямую. Cloud relay можно отключить, а desktop companion используется только после включения уведомлений.</p>
+          <a class="text-link" href="https://www.ym-bridge.mytunnel.us.com/ru/privacy-policy/" data-locale-link="" data-i18n="home.privacyLink">Прочитать полную политику конфиденциальности</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section companion" id="companion">
+      <div>
+        <p class="eyebrow" data-i18n="home.companionEyebrow">Необязательный Windows companion</p>
+        <h2 data-i18n="home.companionTitle">Нативные уведомления о смене трека</h2>
+        <p data-i18n="home.companionBody">Расширение полностью работает самостоятельно. Устанавливайте companion, только если хотите небольшое окно Windows при смене трека.</p>
+        <div class="companion-downloads" aria-label="Загрузки Windows companion" data-i18n-aria="home.companionDownloadsAria">
+          <a class="companion-store" href="https://apps.microsoft.com/detail/9NPR697GHTBN">
+            <span class="companion-store-heading">
+              <span class="companion-option-name" data-i18n="home.companionStore">Скачать из Microsoft Store</span>
+              <span class="companion-recommended" data-i18n="home.companionRecommended">Рекомендуется</span>
+            </span>
+            <span class="companion-option-meta" data-i18n="home.companionStoreMeta">Подписанная сборка · Автообновления</span>
+          </a>
+          <div class="companion-portable">
+            <div>
+              <span class="companion-option-name" data-i18n="home.companionPortable">Портативная версия</span>
+              <span class="companion-option-meta" data-i18n="home.companionPortableMeta">Windows x64 · Ручные обновления</span>
+            </div>
+            <div class="companion-portable-links">
+              <a href="/downloads/ym-bridge-companion-windows-x64-v0.1.2.zip" data-i18n="home.companionDownload">Скачать ZIP</a>
+              <a href="/downloads/SHA256SUMS.txt">SHA-256</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="/assets/companion-store-preview.png" alt="Предпросмотр YM Bridge Companion с нативными уведомлениями Windows о смене трека" data-i18n-alt="home.companionImageAlt" width="1536" height="1024" loading="lazy">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/icon128.png" alt="" width="34" height="34">
+        <span>Yandex Music to Last.fm Bridge</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ym-bridge.mytunnel.us.com/ru/#guides" data-locale-link="" data-i18n="common.guides">Руководства</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ru/privacy-policy/" data-locale-link="" data-i18n="common.privacy">Конфиденциальность</a>
+        <a href="https://www.ym-bridge.mytunnel.us.com/ru/support/" data-locale-link="" data-i18n="common.support">Поддержка</a>
+        <a data-store-link="" href="https://chromewebstore.google.com/detail/cjemkikpabifhldcdkopinpejahljcin?utm_source=ym_bridge_site&utm_medium=referral&utm_campaign=localized_site&utm_content=ru_home" target="_blank" rel="noreferrer" data-i18n="common.store">Chrome Web Store</a>
+      </div>
+      <p data-i18n="common.disclaimer">Независимый проект. Не связан с Yandex или Last.fm.</p>
+    </div>
+  </footer>
+</body>
+</html>
